@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,28 +11,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- animate -->
-    <link rel="stylesheet" href="../css/animate.min.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/enrollment.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enrollment.css') }}">
     <!-- Slick Slider CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/slick.css" />
-    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick-theme.css') }}" />
     <!-- Favicon -->
-    <link rel="icon" href="../public/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon1.ico') }}" type="image/x-icon">
 </head>
 
 
 <body>
     <section class="header">
         <nav class="navbar">
-            <a href="index.html"><img src="../public/images/Brand-Image00.png" alt="Logo" class="navbar-logo">
-            </a>
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Brand-Image00.png') }}" alt="Logo" class="navbar-logo"></a>
             <div class="nav-pc-links">
                 <ul>
-                    <li><a href="index.html"><i class="fa-solid fa-house icons"></i> ホーム</a></li>
-                    <li><a href="features.html"><i class="fas fa-seedling icons"></i> 特色</a></li>
-                    <li><a href="schedule.html"><i class="fas fa-calendar-alt icons"></i>予定表</a></li>
-                    <li><a href="enrollment.html"><i class="fas fa-user-plus icons"></i>  入会案内</a></li>
+                    <li><a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a></li>
+                    <li><a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a></li>
+                    <li><a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a></li>
+                    <li><a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a></li>
                 </ul>
             </div>
             <div class="nav-phone">
@@ -45,26 +44,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav  ">
+                        <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="index.html"><i class="fa-solid fa-house icons"></i> ホーム</a>
+                                <a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a>
                             </li>
                             <li class="nav-item">
-                                <a href="features.html"><i class="fas fa-seedling icons"></i> 特色</a>
+                                <a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a>
                             </li>
                             <li class="nav-item">
-                                <a href="schedule.html"><i class="fas fa-calendar-alt icons"></i>予定表</a>
+                                <a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a>
                             </li>
                             <li class="nav-item">
-                                <a href="enrollment.html"><i class="fas fa-user-plus icons"></i>  入会案内</a>
+                                <a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     その他
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./pdf/student-voice.pdf">生徒の声</a></li>
-                                    <li><a class="dropdown-item" href="enrollment.html#enrollment-faq"><i class="fa-solid fa-file-circle-question"></i>　Q&A</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('static', filename='pdf/student-voice.pdf') }}">生徒の声</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('enrollment') }}#enrollment-faq"><i class="fa-solid fa-file-circle-question"></i> Q&A</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -80,7 +79,7 @@
     <section class="enrollment">
         <i class="fa-brands fa-red-river" id="backToTop"></i>
         <h2><i class="fas fa-user-plus icons"></i> 入会案内</h2>
-        <section class="en-sec enrollment-process" id=" enrollment-process">
+        <section class="en-sec enrollment-process" id="enrollment-process">
             <h2>入会の流れ</h2>
             <div class="row row01">
                 <div class="process-col mycol process-col01">
@@ -89,7 +88,7 @@
                         <h4>希望コースを選択する</h4>
                     </div>
                     <div class="process-images think-image">
-                        <img src="../public/images/process-image/think-boy.png" class="process-image thinking-image boy" alt="boy">
+                        <img src="{{ url_for('static', filename='images/process-image/think-boy.png') }}" class="process-image thinking-image boy" alt="boy">
                     </div>
                 </div>
                 <div class="process-col mycol process-col02">
@@ -99,7 +98,7 @@
                         </h4>
                     </div>
                     <div class="process-images think-image">
-                        <img src="../public/images/process-image/apply-boy.png" class="process-image thinking-image boy men" alt="man">
+                        <img src="{{ url_for('static', filename='images/process-image/apply-boy.png') }}" class="process-image thinking-image boy men" alt="man">
                     </div>
                 </div>
                 <div class="process-col mycol process-col03">
@@ -109,7 +108,7 @@
                         </h4>
                     </div>
                     <div class="process-images think-image">
-                        <img src="../public/images/process-image/seeing-boy.png" class="process-image twinking-image boy" alt="boy">
+                        <img src="{{ url_for('static', filename='images/process-image/seeing-boy.png') }}" class="process-image twinking-image boy" alt="boy">
                     </div>
                 </div>
                 <div class="process-col mycol process-col04">
@@ -119,7 +118,7 @@
                             <br>入会手続き完了 </h4>
                     </div>
                     <div class="process-images think-image">
-                        <img src="../public/images/process-image/guts-boy.png" class="process-image twinking-image boy" alt="boy">
+                        <img src="{{ url_for('static', filename='images/process-image/guts-boy.png') }}" class="process-image twinking-image boy" alt="boy">
                     </div>
                 </div>
                 <div class="next-icon">
@@ -129,30 +128,30 @@
                 </div>
             </div>
         </section>
-        <section class="en-sec course-excuse " id="course-excuse">
+        <section class="en-sec course-excuse" id="course-excuse">
             <h2>体験予約</h2>
             <h3>コース紹介と各種特典</h3>
             <h5>"申し込む"をクリックすると対象のコース希望として、体験予約フォームが出てきます。<br>お子様の氏名、生年月日、保護者様の珠算経験の有無、連絡先、電話番号、体験希望時間帯の曜日とクラス、考慮事項などの記入を頂きまして、<br>こちらからの確認メールをもちまして、予約完了とさせていただきます。</h5>
             <div class="row course-row">
-                <div class="course-col mycol course-col01 ">
+                <div class="course-col mycol course-col01">
                     <div class="layer layer01">
                         <h3>週2日コース</h3>
-                        <p class="paying ">￥9800(月額) </p>
-                        <p class="perday p01 ">(￥1500 (1日あたり))</p>
+                        <p class="paying">￥9800(月額)</p>
+                        <p class="perday p01">(￥1500 (1日あたり))</p>
                         <p>✓ 週2日の固定クラス</p>
 
                         <a href="https://forms.gle/zF6fgWyWxWVAcbSG9" target="_blank" class="course-btn-link">
-                            <button class="course-btn ">申し込み<i class="fas fa-angle-right fa-position-right "></i></button></a>
+                            <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
                     </div>
                 </div>
-                <div class="course-col mycol course-col02 ">
-                    <div class="layer layer02 ">
+                <div class="course-col mycol course-col02">
+                    <div class="layer layer02">
                         <h3>フリ－コース</h3>
-                        <p class="paying">￥12000(月額) </p>
-                        <p class="perday p02 ">(￥1300以下 (1日あたり))</p>
+                        <p class="paying">￥12000(月額)</p>
+                        <p class="perday p02">(￥1300以下 (1日あたり))</p>
                         <p>✓ 固定クラス外も通い放題</p>
 
-                        <p><a href="./public/pdf/course-example.pdf" target="_blank" alt="pdf">受講者のスケジュール例はこちらから<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <p><a href="{{ url_for('static', filename='pdf/course-example.pdf') }}" target="_blank" alt="pdf">受講者のスケジュール例はこちらから<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </p>
                         <p>+</p>
                         <p>✓ 荷物が置いていける専用ロッカー</p>
@@ -161,13 +160,13 @@
                         <p>✓ 進級が早い</p>
 
                         <a href="https://forms.gle/tDZi2uUytBNe4N139" target="_blank" class="course-btn-link">
-                            <button class="course-btn ">申し込み<i class="fas fa-angle-right fa-position-right "></i></button></a>
+                            <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="en-sec enrollment-faq " id="enrollment-faq">
-            <h2>よくあるQ&A </h2>
+        <section class="en-sec enrollment-faq" id="enrollment-faq">
+            <h2>よくあるQ&A</h2>
             <div class="row row04">
                 <h4>-入塾前のよくあるQ-</h4>
                 <div class="mycol faq-col">
@@ -187,7 +186,7 @@
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                Q2.まず何級を目標に取り組めばいいですか？各級の目安を教えてください 。
+                                Q2.まず何級を目標に取り組めばいいですか？各級の目安を教えてください。
                         </button>
                             </h3>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -208,12 +207,12 @@
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                Q3.  よいそろばん教室はどこを見て確認できますか？
-                        
+                                Q3. よいそろばん教室はどこを見て確認できますか？
                         </button>
                             </h3>
                             <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. 最後の日をカウントダウンするアプリを開発して売り出しているところでしょう。マーケティング戦略は「最後まで一緒にカウントダウンしよう」です。もちろん、返金保証は付きません。最終的には、私たちがどれほどの時間を無駄にしているかを実感する良い機会になるでしょう。</div>
+                                <div class="accordion-body">A. 良いそろばん教室の特徴としては、しっかりとした指導方針があること、生徒一人ひとりに合わせた進度で指導が行われること、また教室の雰囲気が良いことが挙げられます。
+                                    <br>体験授業に参加して、教室の雰囲気や指導方法を実際に確認することをお勧めします。</div>
                             </div>
                         </div>
                     </div>
@@ -225,37 +224,36 @@
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                                Q1. ゾンビはなぜ速く走れないのですか？
+                                Q1. 授業を欠席する場合、どうすれば良いですか？
                             </button>
                             </h3>
                             <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. 答え: ダイエットの成功が彼らの速度に影響しています。肉が落ちれば落ちるほど、彼らは軽くなり速くなる...理論上は。しかし現実には、ゾンビのランニングシューズの業界はまだ発展途上です。それに、脳を追い求める情熱には足の速さなど関係ないのです。 </div>
+                                <div class="accordion-body">A. 欠席の場合は、事前に連絡をお願いしています。欠席連絡は電話またはLINEで行ってください。必要に応じて振替授業の調整も可能ですので、ご相談ください。</div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                Q2. 不老不死になれるなら、どんな職業を選びますか？
+                                Q2. 自宅での学習をサポートする教材はありますか？
                         </button>
                             </h3>
                             <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. 税金徴収官はどうでしょう？永遠に人々を追い詰めることができます。人々は「死ぬまで税金」と言いますが、その「まで」をあなたが定義するのです。ただ、退屈は避けられないでしょう。そして、不老不死の人生の最大の鉄則は、決して終わらない月曜日には手を出さないことです。</div>
+                                <div class="accordion-body">A. はい、そろばんサークルでは自宅での学習をサポートするための教材や練習問題を提供しています。また、オンラインで利用できる学習コンテンツも充実していますので、積極的にご利用ください。</div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                                Q3.  万が一の隕石衝突で人類が滅亡する日、あなたは何をしていたいですか？
-                        
+                                Q3. 定期的なテストはありますか？
                         </button>
                             </h3>
                             <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. 最後の日をカウントダウンするアプリを開発して売り出しているところでしょう。マーケティング戦略は「最後まで一緒にカウントダウンしよう」です。もちろん、返金保証は付きません。最終的には、私たちがどれほどの時間を無駄にしているかを実感する良い機会になるでしょう。</div>
+                                <div class="accordion-body">A. はい、そろばんサークルでは定期的にテストを実施しています。これにより、生徒の進捗状況を把握し、必要に応じて個別にサポートを行っています。テストの結果は、保護者の方にもフィードバックいたします。</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h4>-入塾後のよくあるQ-</h4>
+                <h4>-その他のQ-</h4>
                 <div class="mycol faq-col">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
@@ -282,18 +280,17 @@
                         </button>
                             </h3>
                             <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. </div>
+                                <div class="accordion-body">A. 生徒向けSlackは、クラスの連絡や宿題の確認、質疑応答などを行うためのプラットフォームです。保護者の方も参加していただけますので、家庭学習のサポートにも活用してください。</div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h3 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
-                                Q3.  万が一の隕石衝突で人類が滅亡する日、あなたは何をしていたいですか？
-                        
+                                Q3.  クラスの変更はできますか？
                         </button>
                             </h3>
                             <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">A. 最後の日をカウントダウンするアプリを開発して売り出しているところでしょう。マーケティング戦略は「最後まで一緒にカウントダウンしよう」です。もちろん、返金保証は付きません。最終的には、私たちがどれほどの時間を無駄にしているかを実感する良い機会になるでしょう。</div>
+                                <div class="accordion-body">A. クラスの変更は可能です。変更を希望される場合は、事前にご相談ください。生徒の状況や希望に合わせて、最適なクラスへの変更をサポートいたします。</div>
                             </div>
                         </div>
                     </div>
@@ -303,11 +300,9 @@
     </section>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <script src="../js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <!-- bootstrap.bundle.min.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- スクロール速度(ミリ秒) -->
     <script>
         $(document).ready(function() {
@@ -347,35 +342,34 @@
     </script>
 </body>
 <footer>
-    <div class="footer-content ">
-        <div class="footer-main ">
+    <div class="footer-content">
+        <div class="footer-main">
             <h2>そろばんサークル</h2>
             <h5>〒113-0021 東京都文京区本駒込2丁目10-4 四季ビル2F</h5>
             <h5>電話: 080-3722-3544 <br>※授業時間内(15:00~20:00)のご電話はご遠慮ください。</h5>
-            <div class="footer-social-media ">
-                <a href="https://www.instagram.com/sorobansakuru " target="_blank " title="Follow us on Instagram ">
-                    <i class="fa-brands fa-square-instagram "></i>
-                    <h4 class="open-sesami ">公式Instagram公開中</h4>
+            <div class="footer-social-media">
+                <a href="https://www.instagram.com/sorobansakuru" target="_blank" title="Follow us on Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <h4 class="open-sesami">公式Instagram公開中</h4>
                 </a>
-                <a href="https://www.youtube.com/@SorobanCircle0601 " target="_blank " title="Subscribe to our YouTube channel ">
-                    <i class="fa-brands fa-youtube "></i>
+                <a href="https://www.youtube.com/@SorobanCircle0601" target="_blank" title="Subscribe to our YouTube channel">
+                    <i class="fa-brands fa-youtube"></i>
                     <h4>公式YouTube準備中</h4>
                 </a>
-                <a href=" " target="_blank " title="Coming Soon? ">
-                    <i class="fa-brands fa-line "></i>
+                <a href="#" target="_blank" title="Coming Soon?">
+                    <i class="fa-brands fa-line"></i>
                     <h4>公式LINE準備中</h4>
                 </a>
-                <a href="https://forms.gle/YCTm46odCU8bVRcC7 " target="_blank " title="保護者向けは準備中です。 ">
-                    <i class="fa-brands fa-slack "></i>
+                <a href="https://forms.gle/YCTm46odCU8bVRcC7" target="_blank" title="保護者向けは準備中です。">
+                    <i class="fa-brands fa-slack"></i>
                     <h4>生徒向け公式Slack</h4>
                 </a>
             </div>
         </div>
     </div>
-    <div class="footer-bottom ">
-        <p>©NAGAMOTO MUNENORI -そろばんサ－クル- All Rights Reserved.</p>
+    <div class="footer-bottom">
+        <p>©NAGAMOTO MUNENORI -そろばんサークル- All Rights Reserved.</p>
     </div>
 </footer>
-
 
 </html>

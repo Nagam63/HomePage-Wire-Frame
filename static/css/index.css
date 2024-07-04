@@ -227,7 +227,7 @@
 .greeting-section {
     width: 75%;
     /* background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../public/images/event02.jpg'); */
-    background-image: url('../public/images/logo00.jpg');
+    background-image: url('../images/logo00.jpg');
     background-size: contain;
     /* 画像がコンテナを完全に覆うように設定 */
     background-position: center;

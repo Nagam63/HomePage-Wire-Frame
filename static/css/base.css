@@ -50,7 +50,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     /* ナビゲーションバーの高さに応じて調整 */
-    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../public/images/raw-background/IMG_9925.JPG");
+    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/raw-background/IMG_9925.JPG");
     /* 背景画像のパスを指定 */
     background-size: cover;
     /* 画像がコンテナを完全に覆うように設定 */

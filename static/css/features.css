@@ -9,7 +9,7 @@ p {
 }
 
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../public/images/raw-background/IMG_0483.JPG");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/raw-background/IMG_0483.JPG");
 }
 
 .features-main {
