@@ -1,0 +1,118 @@
+�t�H���_�[ �p�X�̈ꗗ:  �{�����[�� TIH0422000A
+�{�����[�� �V���A���ԍ��� 8636-3E1E �ł�
+C:.
+|   project_structure.txt
+|   
++---.vscode
+|       settings.json
+|       
++---css
+|   |   animate.min.css
+|   |   base.css
+|   |   enrollment.css
+|   |   features.css
+|   |   index.css
+|   |   activities.css
+|   |   slick-theme.css
+|   |   slick.css
+|   |   trial.css
+|   |   
+|   \---fonts
+|           slick.eot
+|           slick.svg
+|           slick.ttf
+|           slick.woff
+|           
++---js
+|       script.js
+|       slick.min.js
+|       
++---pages
+|       enrollment.html
+|       features.html
+|       index.html
+|       activities.html
+|       
+\---public
+    |   favicon1.ico
+    |   
+    +---images
+    |   |   Brand-Image00.png
+    |   |   event01.JPG
+    |   |   event02.jpg
+    |   |   IMG_9750.PNG
+    |   |   logo.jpg
+    |   |   logo00.jpg
+    |   |   
+    |   +---features-section
+    |   |       con-image1.png
+    |   |       con-image2.png
+    |   |       
+    |   +---process-image
+    |   |       apply-boy.png
+    |   |       apply-man.svg
+    |   |       apply-woman.svg
+    |   |       guts-boy.png
+    |   |       seeing-boy.png
+    |   |       think-boy.png
+    |   |       think-boy.svg
+    |   |       think-girl.svg
+    |   |       twink-boy.svg
+    |   |       twink-girl.svg
+    |   |       
+    |   +---raw-background
+    |   |       IMG_0024.JPG
+    |   |       IMG_0461.JPG
+    |   |       IMG_0462.JPG
+    |   |       IMG_0480.JPG
+    |   |       IMG_0483.JPG
+    |   |       IMG_0484.JPG
+    |   |       IMG_0485.JPG
+    |   |       IMG_0486.JPG
+    |   |       IMG_9734.JPG
+    |   |       IMG_9776.JPG
+    |   |       IMG_9782.JPG
+    |   |       IMG_9919.JPG
+    |   |       IMG_9925.JPG
+    |   |       
+    |   +---raw-slider-image
+    |   |   |   105454-OMQ7UB-368.jpg
+    |   |   |   13070.jpg
+    |   |   |   2521663.jpg
+    |   |   |   45238-O4FYFJ.jpg
+    |   |   |   JuDec11.jpg
+    |   |   |   
+    |   |   \---back
+    |   |           back-1.jpg
+    |   |           back-2.jpg
+    |   |           back-3.jpg
+    |   |           back-4.jpg
+    |   |           back-5.jpg
+    |   |           
+    |   +---slider_images
+    |   |       img-1.png
+    |   |       img-101.png
+    |   |       img-2.png
+    |   |       img-3.png
+    |   |       img-4.png
+    |   |       img-5.png
+    |   |       pic-1.png
+    |   |       pic-2.png
+    |   |       pic-3.png
+    |   |       pic-4.png
+    |   |       pic-5.png
+    |   |       pic-6.png
+    |   |       
+    |   \---student
+    |           student01.png
+    |           student02.png
+    |           student03.png
+    |           student04.png
+    |           student05.png
+    |           student06.png
+    |           student07.png
+    |           
+    \---pdf
+            course-example.pdf
+            student-voice.pdf
+            
