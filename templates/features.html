@@ -1,325 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>そろばんサークル|特色</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- font awesome -->
-    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- animate -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
-    <!-- Slick Slider CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick-theme.css') }}" />
     <!-- Favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon1.ico') }}" type="image/x-icon">
 </head>
 
 <body>
-    <section class="header">
-        <nav class="navbar fixed-top">
-            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Brand-Image00.png') }}" alt="Logo" class="navbar-logo"></a>
-            <div class="nav-pc-links">
-                <ul>
-                    <li><a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a></li>
-                    <li><a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a></li>
-                    <li><a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a></li>
-                    <li><a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a></li>
-                </ul>
-            </div>
-            <div class="nav-phone">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h4 class="offcanvas-title" id="offcanvasNavbarLabel">そろばんサークル</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    その他
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ url_for('static', filename='pdf/student-voice.pdf') }}">生徒の声</a></li>
-                                    <li><a class="dropdown-item" href="{{ url_for('enrollment') }}#enrollment-faq"><i class="fa-solid fa-file-circle-question"></i> Q&A</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </section>
-    <i class="fa-brands fa-red-river" id="backToTop"></i>
-
-    <section class="features-main">
-        <div class="f-title">
-            <h1>特色</h1>
-            <h4>そろばんで得られる効果、特にそろばんサークルでの取り組みについての紹介</h4>
-        </div>
-        <section class="myscrollspy">
-            <nav id="navbar-example2" class="mynav navbar bg-body-tertiary px-3">
-                <a class="navbar-brand" href="#head">＃</a>
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#scrollspyHeading1">指導方針</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">指導内容</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#scrollspyHeading2">検定試験</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading3">競技大会</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading4">応用計算</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">設備・イベント</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#scrollspyHeading5">登校管理</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading6">らくらく連絡網</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading7">見守りカメラ</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading8">特別練習会</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading9">プチ合宿</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading10">優良生徒表彰式</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">その他</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#scrollspyHeading12">夏休みイベント</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading13">宿題大作戦</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading11">お楽しみ会</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading14">準会場</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading15">漢字検定</a></li>
-                            <li><a class="dropdown-item" href="#scrollspyHeading16">英語検定</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="con">
-                <div class="container F-container">
-                    <div class="container2 container2-1" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                        <h4 id="scrollspyHeading1">-　指導方針　-</h4>
-                        <div class="p-container1">
-                            <p>　当教室では、各生徒の<b>性格や学習ペース</b>を理解し、<b>個々に合わせた進度</b>を基本方針としています。</p>
-                            <p>　同じ進度であれば、<b>年齢や学校が異なる生徒同士</b>でも、交流し、互いに成長を促すことで、互いを刺激するコミュニティの構築を重視しています。今では、生徒たちにとってただの学習場所以上のもの、安心して自分を表現できる<b>第三の「居場所」</b>になっています。</p>
-                            <p>　私たちのそろばん教室では、計算力の向上だけではなく、社会で生き生きと成功するために必要な【生きる力】を育んでいくことに尽力しています。この<b>個性に寄り添った指導法</b>が、私たちの教室が提供する方針です。</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container Sec-container">
-                    <div class="container1 container1-2"></div>
-                    <div class="container2 container2-2" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                        <h4 id="scrollspyHeading2">-　検定試験　-</h4>
-                        <div class="p-container2">
-                            <p>　そろばんサークルでは、最強の計算方法とされる<b>そろばん式暗算</b>を身に着けることを目的として、
-                                <br><b>日本珠算連盟</b>の<b>珠算検定試験</b>と<b>暗算検定試験</b>、<b>読み上げ算・読み上げ暗算検定試験</b>を並行して受験していきます。
-                            </p>
-                            <p>　各生徒それぞれの進度がありますが、<b>毎回いずれかの種目で受験していくこと</b>で目的意識を持ち、日ごろから練習するように指導しています。商工会議所で受検する際と同様に<b>教室で受検が可能</b>ですので、小さな生徒でも日頃から練習している環境で安心して受検することができます。
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading3">-　競技大会　-</h4>
-                        <div class="p-container2">
-                            <p>　そろばんサークルでは、川崎珠算協会に所属し、<b>各種競技大会</b>にも参加していきます。日頃練習している桁数のみではなく、競技大会の異なる形式の問題をこなしていくことで、<b>過学習を防ぎ</b>、技術を確実にしていきます。</p>
-                            <p>　また、試験に向けた練習では得られない<b>闘争心やモチベーション</b>、また賞を獲得したり、あるいは<b>トロフィー</b>を勝ち取ることもできるかもしれません。</p>
-                        </div>
-                        <h4 id="scrollspyHeading4">-　応用計算　-</h4>
-                        <div class="p-container2">
-                            <p>　そろばんサークルでは、段位から<b>全国珠算教育連盟</b>の検定試験を加えて、<b>そろばん式暗算を応用していく</b>ためのカリキュラム<b>"応用計算"</b>を用意しています。</p>
-                            <p>　応用計算では、<b>割合や分数、出会い算や最小公倍数、損益計算</b>などを珠算式暗算で身につけます。</p>
-                        </div>
-                        <h4 id="scrollspyHeading5">-　登校管理　-</h4>
-                        <div class="p-container2">
-                            <p>　そろばんサークルには<b>学校からそのまま来る生徒</b>も多いので<b>登校と下校</b>をメールでお知らせするフラッシュ暗算ネット検定教会の入退出管理ソフト<b>"通行手形"</b>を使用しています。</p>
-                            <p>　入会手続きのなかで<b>登録いただいたアドレス</b>宛てに,<b>登下校時</b>に通知が届くようになっています。</p>
-                            <p>　また、年末には<b>登校ポイント</b>や<b>大会・日頃の頑張り</b>に応じた商品を<b>多数</b>用意しています。</p>
-                        </div>
-                        <h4 id="scrollspyHeading6">-　らくらく連絡網　-</h4>
-                        <div class="p-container2">
-                            <p>そろばんサークルでは、こちらからのご連絡や、欠席連絡、イベント参加確認に<b>”らくらく連絡網”</b>を利用しています。
-                                <br>全体連絡においてこちらからのご連絡をさせていただき、欠席のご連絡は個人用チャットにおいて受け付けています。
-                                <br>システム上、保護者様が全体連絡に投稿が可能になっております。あらかじめ、保護者様には閲覧のみのお願いをしていますが、
-                                <br>万が一ご送信された場合でも連絡先などの情報漏洩は<b>それにより発生することはありません</b>のでご了承ください。
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading7">-　見守りカメラ　-</h4>
-                        <div class="p-container2">
-                            <p>　そろばんサークルでは、万が一のトラブルに備え、<b>授業を常時録画しております</b>。
-                                <br>録画データは、原則として<b>誰も閲覧しないようにしていますが</b>、問題が発生した場合には、関係者が確認できる措置を講じております。
-                                <br>この点、ご理解とご協力を<b>お願いいたします</b>。</p>
-                        </div>
-                        <h4 id="scrollspyHeading8">-　特別練習会　-</h4>
-                        <div class="p-container2">
-                            <p><b>三級以上の上級検定</b>を受験する生徒を対象に特別練習会を検定試験の前週の土曜日に開催しています。</p>
-                            <p></p>
-                        </div>
-                        <h4 id="scrollspyHeading9">-　プチ合宿　-</h4>
-                        <div class="p-container2">
-                            <p>プチ合宿では、競技大会に向けた練習を行います。
-                                <br>また、そろばんサークルでは生徒同士の交流も重視しており、練習後にはレクリエーションも行っています。
-                                <br>コロナ期間中は開催を見合わせていましたが、<b>23年度には再開しました。</b>
-                                <br>23年度は終日の開催で、練習後には有志の保護者の方々と共に<b>ダチョウの卵を使ったオムライス作り、クレープ作り、焼きそば作り</b>を楽しみました。
-                                <br>点数アップと共に、生徒たちも楽しく参加していました。
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading10">-　優良生徒表彰式　-</h4>
-                        <div class="p-container2">
-                            <p>当教室は毎年、川崎珠算協会が主催する<b>優良生徒表彰式</b>に参加しています。
-                                <br>この表彰式では、珠算・暗算・読上算・読上暗算の<b>4つの技能</b>で<b>三級以上</b>を取得し、
-                                <br>さらに、所定の在籍期間を満たすか、模範となる行動が認められる生徒が<b>優良生徒として表彰</b>されます。
-                                <br>表彰には賞状だけでなく、成果に応じてメダルやトロフィーも授与されます。
-                                <br>生徒たちは、これらのメダルやトロフィーも目標のひとつとして、日々の練習に励んでいます。
-                            </p>
-                        </div>
-
-                        <h4 id="scrollspyHeading12">-　夏休みイベント　-</h4>
-                        <div class="p-container2">
-                            <p>夏休み中、学校がお休みの期間に、そろばんサークルで特別なイベントを開催します。宿題も遊びも一緒に楽しみましょう。
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading13">-　宿題大作戦　-</h4>
-                        <div class="p-container2">
-                            <p>　夏休みの宿題、面倒に感じることが多いですよね。
-                                <br>でも、友達と一緒に取り組めば、<b>驚くほど早く終わらせることができます。</b>読書感想文や自由研究などは、外部の講師を招いて一緒に取り組むことで、<b>より充実した内容にすることができます。</b>
-                                <br> また、皆さんからの「こんな活動をやってほしい」という要望も大歓迎です。<b>どんな小さなことでも、気軽にお声掛けください。</b>
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading11">-　お楽しみ会　-</h4>
-                        <div class="p-container2">
-                            <p>　長期休暇を活用して、生徒同士の交流を深めるために、毎年レジャー施設へのお出かけを企画しています。
-                                <br>昨年度は、東京タワー内のレジャー施設「RED」を訪れました。毎年、訪れる場所は異なります。
-                                <br>レジャー施設の選定にあたっては、生徒や保護者の方々からのおすすめスポットを募集しています。
-                            </p>
-                        </div>
-                        <h4 id="scrollspyHeading14">-　漢字検定・英語検定　-</h4>
-                        <div class="p-container2">
-                            <p>そろばんサークルでは、学びを深めるための<b>先取り学習</b>を推奨しています。
-                                <br><b>学習過程で目標を段階的に設定すること</b>は、非常に効果的です。
-                                <br>漢字検定・英語検定の準会場として登録しました。<b>外部の方々も受験することが可能です。</b>
-                                <br>兄弟姉妹や保護者の方々も、この機会をぜひご利用ください。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="{{ url_for('static', filename='images/features-section/con-image1.png') }}" alt="lol" class="con-image lol">
-            <img src="{{ url_for('static', filename='images/features-section/con-image2.png') }}" alt="study" class="con-image study">
-
+    <header>
+        <h1>みんなで一緒にまちづくりを！</h1>
+    </header>
+    <main>
+        <section class="mission">
+            <h2>Mission</h2>
+            <p>ライフスタイル（暮らし方、働き方、生き方）について自ら考え、自ら選択することのできる仕掛けを提供し、共創する機会を生み出すことで、持続可能で豊かな社会の実現に貢献します。</p>
         </section>
-    </section>
-
+        <section class="vision">
+            <h2>Vision</h2>
+            <p>資本主義のリノベーション</p>
+        </section>
+        <section class="values">
+            <h2>Value「3C+E」</h2>
+            <div class="value-items">
+                <div class="value-item">
+                    <h3>Challenge</h3>
+                    <p>まずはやってみる！</p>
+                </div>
+                <div class="value-item">
+                    <h3>Creation</h3>
+                    <p>既存の枠にとらわれない！</p>
+                </div>
+                <div class="value-item">
+                    <h3>Communication</h3>
+                    <p>気持ちよいコミュニケーション！</p>
+                </div>
+                <div class="value-item">
+                    <h3>ENJOY</h3>
+                    <p>自分が楽しければ、みんなも楽しいのだ！</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <h2>Corporate Information</h2>
+            <p>株式会社エンジョイワークス</p>
+            <p>代表者：小林剛昭</p>
+        </footer>
+    </main>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- script.js  -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <!-- bootstrap.bundle.min.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <!-- Scroll-smooth -->
-    <script>
-        $(document).ready(function() {
-            $('a[href^="#"]').click(function() {
-                var speed = 500; // スクロール速度(ミリ秒)
-                var href = $(this).attr("href");
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                var position = target.offset().top - 150;
-                $('html, body').animate({
-                    scrollTop: position
-                }, speed, 'swing');
-                return false;
-            });
-        });
-    </script>
-    <!-- To The Top -->
-    <script>
-        $(document).ready(function() {
-            $('#backToTop').click(function() {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 500); // 500ミリ秒でトップに戻る
-            });
-
-            // オプション: ページの特定の位置より下にスクロールした時にのみボタンを表示
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 100) { // 100pxより下にスクロールしたら表示
-                    $('#backToTop').fadeIn();
-                } else {
-                    $('#backToTop').fadeOut();
-                }
-            });
-
-            // 初期状態ではボタンを隠す
-            $('#backToTop').hide();
-        });
-    </script>
-
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
-<footer>
-    <div class="footer-content">
-        <div class="footer-main">
-            <h2>そろばんサークル</h2>
-            <h5>〒113-0021 東京都文京区本駒込2丁目10-4 四季ビル2F</h5>
-            <h5>電話: 080-3722-3544 <br>※授業時間内(15:00~20:00)のご電話はご遠慮ください。</h5>
-            <div class="footer-social-media">
-                <a href="https://www.instagram.com/sorobansakuru" target="_blank" title="Follow us on Instagram">
-                    <i class="fa-brands fa-square-instagram"></i>
-                    <h4 class="open-sesami">公式Instagram公開中</h4>
-                </a>
-                <a href="https://www.youtube.com/@SorobanCircle0601" target="_blank" title="Subscribe to our YouTube channel">
-                    <i class="fa-brands fa-youtube"></i>
-                    <h4>公式YouTube準備中</h4>
-                </a>
-                <a href="#" target="_blank" title="Coming Soon?">
-                    <i class="fa-brands fa-line"></i>
-                    <h4>公式LINE準備中</h4>
-                </a>
-                <a href="https://forms.gle/YCTm46odCU8bVRcC7" target="_blank" title="保護者向けは準備中です。">
-                    <i class="fa-brands fa-slack"></i>
-                    <h4>生徒向け公式Slack</h4>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>©NAGAMOTO MUNENORI -そろばんサークル- All Rights Reserved.</p>
-    </div>
-</footer>
 
 </html>

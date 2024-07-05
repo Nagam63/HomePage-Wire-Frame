@@ -1,145 +1,76 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-.navbar-brand,
-p {
-    color: black
-}
-
 body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/raw-background/IMG_0483.JPG");
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.features-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.f-title {
-    margin-top: 200px;
-    margin-bottom: 100px;
-}
-
-.myscrollspy {
-    width: 99%;
-}
-
-.mynav {
-    position: sticky;
-    top: 70px;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    z-index: 5;
-}
-
-.myscrollspy ul {
-    margin-right: 0;
-}
-
-.nav-pills {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.Mynav-pills {
-    display: flex;
-    flex-direction: column;
-}
-
-.con {
-    background: linear-gradient(159deg, rgba(245, 245, 245) 40%, rgba(25, 200, 255) 100%);
-    padding: 20px 0px 50px;
-    margin-bottom: 0px;
-}
-
-.container {
-    background: white;
-    padding: 30px 0px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    width: 80%;
-}
-
-.Sec-container {
-    margin-bottom: 10px;
-}
-
-.container1 {
-    background: white;
-    width: 20%;
-}
-
-.container1-1 {
-    display: none;
-}
-
-.container2 {
-    width: 70%;
-    padding-right: 20px;
-}
-
-.container2-1 {
-    width: 100%;
-    padding: 0px 80px;
-}
-
-.container1-2 {
-    background-image: url('../public/images/logo00.jpg');
-    background-size: cover;
-    /* 画像がコンテナを完全に覆うように設定 */
-    background-position: center;
-    /* 画像を中央に配置 */
-    background-repeat: no-repeat;
-    /* 画像が繰り返されないように設定 */
-    background-attachment: initial;
-    /* 背景画像がスクロールに追従しないように設定 */
-    width: 25%;
-    border: 2px solid rgba(84, 152, 241, 0.884);
-    border-radius: 25px;
-    margin-left: 10px;
-}
-
-.container2-2 {
-    overflow: auto;
-    height: 300px;
-    padding: 0 100px;
-}
-
-.p-container1 {
+header {
+    background-color: #fff;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-.p-container1 p {
-    margin-top: 10px;
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
 }
 
-.p-container2 {
-    margin: 10px 0 15px 0;
-    text-align: justify;
+main {
+    padding: 20px;
 }
 
-.p-container2 p {
-    margin: 5px 0 0px 0;
+section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.con-image {
-    width: 15%;
+section h2 {
+    color: #007bff;
+    font-size: 20px;
+    margin-top: 0;
 }
 
-.lol {
-    position: absolute;
-    top: 500px;
-    left: 2px;
+section p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.study {
-    position: absolute;
-    top: 900px;
-    right: 2px;
+.values .value-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.values .value-item {
+    flex: 1;
+    min-width: 150px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    color: #ff4081;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+footer p {
+    font-size: 14px;
 }
