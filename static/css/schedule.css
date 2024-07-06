@@ -1,0 +1,103 @@
+/* レスポンシブデザインの調整 */
+
+body {
+    background-image: none;
+    background-color: rgba(52, 208, 247, 0.884);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../public/images/raw-background/IMG_9734.JPG");
+    align-items: center;
+}
+
+.schedule {
+    margin: 120px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.calender-title {
+    width: 95%;
+    background: rgba(250, 250, 250, .98);
+    border-radius: 15px 15px 0 0;
+}
+
+.calender {
+    width: 95%;
+    background-color: rgba(250, 250, 250, .98);
+    border-top: 10px rgba(0, 0, 0, .1) dotted;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.calendar-container {
+    width: 70%;
+    border-right: 10px rgba(0, 0, 0, .1) dotted;
+}
+
+.calendar-container iframe {
+    width: 90%;
+    height: 50vh;
+}
+
+.calender-text {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thread {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thread h4 {
+    width: 60%;
+    border-bottom: 10px rgba(0, 0, 0, .5) dotted;
+    border-bottom-width: 10px;
+    margin: 15px 0 10px 0;
+}
+
+.thread1 h4 {
+    width: 28%;
+}
+
+.thread2 h4 {
+    width: 50%;
+}
+
+.thread3 h4 {
+    width: 60%;
+}
+
+.thread h5 {
+    margin: 0px 0 5px;
+    width: 100%;
+}
+
+@media (max-width: 1366px) {
+    /* iPadPro 横 */
+}
+
+@media (max-width: 1024px) {
+    /* iPadPro 縦 */
+}
+
+@media (max-width: 844px) {
+    /* iPhone 12 横  hum */
+}
+
+@media screen and (max-width: 768px) {
+    /* iPad Mini 縦 */
+}
+
+@media screen and (max-width: 430px) {
+    /* iPhone14 Pro*/
+}
+
+@media screen and (max-width: 390px) {
+    /* iPhone12 Pro */
+}

@@ -1,0 +1,170 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    font-family: 'Noto Serif JP', serif;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin: 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0C7AC2;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.values .value-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.values .value-item {
+    flex: 1;
+    min-width: 220px;
+    background-color: rgb(250,250,250);
+    padding: 20px;
+    border: 1px solid #ddd;
+
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.values .value-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.values .value-item p {
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    color: #ff4081;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+footer p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.footer-social-media {
+    margin-top: 20px;
+}
+
+.footer-social-media a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-social-media a:hover {
+    color: #007bff;
+}
+
+/* Navbar CSS */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    max-height: 50px;
+}
+
+.nav-pc-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-pc-links li {
+    display: inline;
+}
+
+.nav-pc-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nav-phone .navbar-toggler {
+    border: none;
+}
+
+.offcanvas-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.offcanvas-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.offcanvas-body li {
+    margin-bottom: 10px;
+}
+
+.offcanvas-body a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.icons {
+    margin-right: 5px;
+}
