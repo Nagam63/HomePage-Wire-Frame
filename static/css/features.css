@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
 body {
-    background-color: #f8f9fa;
-    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    background-image: linear-gradient( rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../images/raw-background/IMG_9925.JPG");
     
 }
 
 header {
-    padding: 40px 20px;
+    padding: 40px 20px 0;
     text-align: center;
 }
 
@@ -20,21 +19,8 @@ header h1 {
     font-family: 'Noto Serif JP', serif;
 }
 
-main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
 
-section {
-    text-align: center;
-    margin-bottom: 10px;
-    background-color: #fff;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 0px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 section h2 {
     margin: 0;
@@ -49,14 +35,51 @@ section p {
     text-align: center;
 }
 
-.values .value-items {
+.feature {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 30px;
+    border: 0px;
+    border-radius: 0px;
+    border: 0px ;
+    padding: 0px;    
+}
+
+
+/* .........feature-1st.......... */
+    
+.feature-1st {
+    background-color: rgba(255, 255, 255, 0.01);
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-around;
+    
+}
+.feature-1st header {
+    padding: 70px 20px 20px;
+}
+.feature-1st section {
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 30px;
+} 
+.feature-1st .mission,.feature-1st .vision,.feature-1st .values{
+    max-width: 900px;
+    
+}
+.feature-1st .values .value-items {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
 }
 
-.values .value-item {
+.feature-1st .values .value-item {
     flex: 1;
     min-width: 220px;
     background-color: rgb(250,250,250);
@@ -67,15 +90,38 @@ section p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.values .value-item h3 {
+.feature-1st .values .value-item h3 {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-.values .value-item p {
+.feature-1st .values .value-item p {
     font-size: 16px;
 }
+
+
+
+/* ..........feture-2nd............... */
+
+.feature-2nd {
+    background-color: rgba(255, 255, 255,0.8);
+    margin: 0 auto;
+}
+
+.feature-2nd section {
+    text-align: center;
+    margin-bottom: 10px;
+    background-color:  rgba(255, 255, 255,0.1);
+    padding: 30px 90px;
+} 
+.feature-1st .mission,.feature-1st .vision,.feature-1st .values{
+    max-width: 900px;
+    
+}
+/* ..........feture-2nd............... */
+
+
 
 footer {
     text-align: center;
