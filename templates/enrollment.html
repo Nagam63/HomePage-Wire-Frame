@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>そろばんサークル|入会案内</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- font awesome -->
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- animate -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enrollment.css') }}">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick-theme.css') }}" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon1.ico') }}" type="image/x-icon">
+</head>
+
+
+<body>
+    <section class="header">
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Brand-Image00.png') }}" alt="Logo" class="navbar-logo"></a>
+            <div class="nav-pc-links">
+                <ul>
+                    <li><a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a></li>
+                    <li><a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a></li>
+                    <li><a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a></li>
+                    <li><a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a></li>
+                </ul>
+            </div>
+            <div class="nav-phone">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvasNavbarLabel">そろばんサークル</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    その他
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ url_for('static', filename='pdf/student-voice.pdf') }}">生徒の声</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('enrollment') }}#enrollment-faq"><i class="fa-solid fa-file-circle-question"></i> Q&A</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="enrollment">
+        <i class="fa-brands fa-red-river" id="backToTop"></i>
+        <h2><i class="fas fa-user-plus icons"></i> 入会案内</h2>
+        <section class="en-sec enrollment-process" id="enrollment-process">
+            <h2>入会の流れ</h2>
+            <div class="row row01">
+                <div class="process-col mycol process-col01">
+                    <div class="step">
+                        <p>STEP 01</p>
+                        <h4>希望コースを選択する</h4>
+                    </div>
+                    <div class="process-images think-image">
+                        <img src="{{ url_for('static', filename='images/process-image/think-boy.png') }}" class="process-image thinking-image boy" alt="boy">
+                    </div>
+                </div>
+                <div class="process-col mycol process-col02">
+                    <div class="step">
+                        <p>STEP 02</p>
+                        <h4>体験授業を申し込む
+                        </h4>
+                    </div>
+                    <div class="process-images think-image">
+                        <img src="{{ url_for('static', filename='images/process-image/apply-boy.png') }}" class="process-image thinking-image boy men" alt="man">
+                    </div>
+                </div>
+                <div class="process-col mycol process-col03">
+                    <div class="step">
+                        <p>STEP 03</p>
+                        <h4>教室で授業を受け<br>雰囲気を見る
+                        </h4>
+                    </div>
+                    <div class="process-images think-image">
+                        <img src="{{ url_for('static', filename='images/process-image/seeing-boy.png') }}" class="process-image twinking-image boy" alt="boy">
+                    </div>
+                </div>
+                <div class="process-col mycol process-col04">
+                    <div class="step">
+                        <p>STEP 04</p>
+                        <h4>各手続きを経て
+                            <br>入会手続き完了 </h4>
+                    </div>
+                    <div class="process-images think-image">
+                        <img src="{{ url_for('static', filename='images/process-image/guts-boy.png') }}" class="process-image twinking-image boy" alt="boy">
+                    </div>
+                </div>
+                <div class="next-icon">
+                    <i class="fa fa-caret-down fa-step1" aria-hidden="true"></i>
+                    <i class="fa fa-caret-down fa-step2" aria-hidden="true"></i>
+                    <i class="fa fa-caret-down fa-step3" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+        <section class="en-sec course-excuse" id="course-excuse">
+            <h2>体験予約</h2>
+            <h3>コース紹介と各種特典</h3>
+            <h5>"申し込む"をクリックすると対象のコース希望として、体験予約フォームが出てきます。<br>お子様の氏名、生年月日、保護者様の珠算経験の有無、連絡先、電話番号、体験希望時間帯の曜日とクラス、考慮事項などの記入を頂きまして、<br>こちらからの確認メールをもちまして、予約完了とさせていただきます。</h5>
+            <div class="row course-row">
+                <div class="course-col mycol course-col01">
+                    <div class="layer layer01">
+                        <h3>週2日コース</h3>
+                        <p class="paying">￥9800(月額)</p>
+                        <p class="perday p01">(￥1500 (1日あたり))</p>
+                        <p>✓ 週2日の固定クラス</p>
+
+                        <a href="https://forms.gle/zF6fgWyWxWVAcbSG9" target="_blank" class="course-btn-link">
+                            <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+                    </div>
+                </div>
+                <div class="course-col mycol course-col02">
+                    <div class="layer layer02">
+                        <h3>フリ－コース</h3>
+                        <p class="paying">￥12000(月額)</p>
+                        <p class="perday p02">(￥1300以下 (1日あたり))</p>
+                        <p>✓ 固定クラス外も通い放題</p>
+
+                        <p><a href="{{ url_for('static', filename='pdf/course-example.pdf') }}" target="_blank" alt="pdf">受講者のスケジュール例はこちらから<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </p>
+                        <p>+</p>
+                        <p>✓ 荷物が置いていける専用ロッカー</p>
+                        <p>✓ 2コマ連続で受講できる</p>
+                        <p>✓別室で休憩が取れる</p>
+                        <p>✓ 進級が早い</p>
+
+                        <a href="https://forms.gle/tDZi2uUytBNe4N139" target="_blank" class="course-btn-link">
+                            <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="en-sec enrollment-faq" id="enrollment-faq">
+            <h2>よくあるQ&A</h2>
+            <div class="row row04">
+                <h4>-入塾前のよくあるQ-</h4>
+                <div class="mycol faq-col">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Q1. 何歳から始められますか？
+                            </button>
+                            </h3>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. 数字の読み書き・保護者の方が離れても大丈夫なお子様であれば、年齢は問いません。
+                                    <br>当教室では小学校入学前の年中・年長からのスタートを推奨しています。
+                                    <br>珠算式あんざんを入学前に身に着けることで、小学校生活のスタートダッシュを切ることができます。 </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Q2.まず何級を目標に取り組めばいいですか？各級の目安を教えてください。
+                        </button>
+                            </h3>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    A. 当塾では、<b>珠算式あんざんを身に着けること</b>を重視しています。
+                                    <br>情報処理能力の向上や、集中力の向上がそろばんによる効果としてよく挙げられますが、
+                                    <br>正確にはそれらの効果は<b>珠算式あんざんを学んでこその効果</b>です。
+                                    <br>わかりやすい例として、数学の計算用紙が筆算を書くものではなく、<b>導出過程を考えるためのモノ</b>として最大限活用できます。
+                                    <br>
+                                    <br>それらを踏まえて、各級の目安を述べさせていただきます。
+                                    <br>幼稚園からスタートされる方は、小学校入学前に<b>6級を取得すること</b>を推奨しています。
+                                    <br>理由といたしましては、義務教育では筆算式計算を基に授業が行われます。
+                                    <br>計算の方針が異なりますので、授業と混同しないように<b>入学前に珠算式あんざんを定着させること</b>が推奨されます。
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Q3. よいそろばん教室はどこを見て確認できますか？
+                        </button>
+                            </h3>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. 良いそろばん教室の特徴としては、しっかりとした指導方針があること、生徒一人ひとりに合わせた進度で指導が行われること、また教室の雰囲気が良いことが挙げられます。
+                                    <br>体験授業に参加して、教室の雰囲気や指導方法を実際に確認することをお勧めします。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>-入塾後のよくあるQ-</h4>
+                <div class="mycol faq-col">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                Q1. 授業を欠席する場合、どうすれば良いですか？
+                            </button>
+                            </h3>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. 欠席の場合は、事前に連絡をお願いしています。欠席連絡は電話またはLINEで行ってください。必要に応じて振替授業の調整も可能ですので、ご相談ください。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                Q2. 自宅での学習をサポートする教材はありますか？
+                        </button>
+                            </h3>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. はい、そろばんサークルでは自宅での学習をサポートするための教材や練習問題を提供しています。また、オンラインで利用できる学習コンテンツも充実していますので、積極的にご利用ください。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                Q3. 定期的なテストはありますか？
+                        </button>
+                            </h3>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. はい、そろばんサークルでは定期的にテストを実施しています。これにより、生徒の進捗状況を把握し、必要に応じて個別にサポートを行っています。テストの結果は、保護者の方にもフィードバックいたします。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>-その他のQ-</h4>
+                <div class="mycol faq-col">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                Q1. <b>公式Instagram</b>では、なにをしていますか？
+                            </button>
+                            </h3>
+                            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. 現在、そろばんサークルでは、Instagramをイベント情報の告知の場として使用しています。
+                                    <br>生徒個人の顔と名前が一致しないよう配慮の上、配信していきます。
+                                    <br>
+                                    <br>また、YouTubeでは生徒の自宅学習の一助となるコンテンツを配信していくことを検討しています。
+                                    <br>現段階では、読上算、読み上げ暗算の上級向けの練習音声、応用計算の復習用動画、競技大会の動画の投稿を考えています。
+                                    <br>よろしければチャンネル登録の上でお待ちください。
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                                Q2. <b>生徒向けSlack</b>とは何ですか？
+                        </button>
+                            </h3>
+                            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. 生徒向けSlackは、クラスの連絡や宿題の確認、質疑応答などを行うためのプラットフォームです。保護者の方も参加していただけますので、家庭学習のサポートにも活用してください。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                                Q3.  クラスの変更はできますか？
+                        </button>
+                            </h3>
+                            <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">A. クラスの変更は可能です。変更を希望される場合は、事前にご相談ください。生徒の状況や希望に合わせて、最適なクラスへの変更をサポートいたします。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- bootstrap.bundle.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- スクロール速度(ミリ秒) -->
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function() {
+                var speed = 500; // スクロール速度(ミリ秒)
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - 80;
+                $('html, body').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
+            });
+        });
+    </script>
+    <!-- #backToTop -->
+    <script>
+        $(document).ready(function() {
+            $('#backToTop').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500); // 500ミリ秒でトップに戻る
+            });
+
+            // オプション: ページの特定の位置より下にスクロールした時にのみボタンを表示
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) { // 100pxより下にスクロールしたら表示
+                    $('#backToTop').fadeIn();
+                } else {
+                    $('#backToTop').fadeOut();
+                }
+            });
+
+            // 初期状態ではボタンを隠す
+            $('#backToTop').hide();
+        });
+    </script>
+</body>
+<footer>
+    <div class="footer-content">
+        <div class="footer-main">
+            <h2>そろばんサークル</h2>
+            <h5>〒113-0021 東京都文京区本駒込2丁目10-4 四季ビル2F</h5>
+            <h5>電話: 080-3722-3544 <br>※授業時間内(15:00~20:00)のご電話はご遠慮ください。</h5>
+            <div class="footer-social-media">
+                <a href="https://www.instagram.com/sorobansakuru" target="_blank" title="Follow us on Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <h4 class="open-sesami">公式Instagram公開中</h4>
+                </a>
+                <a href="https://www.youtube.com/@SorobanCircle0601" target="_blank" title="Subscribe to our YouTube channel">
+                    <i class="fa-brands fa-youtube"></i>
+                    <h4>公式YouTube準備中</h4>
+                </a>
+                <a href="#" target="_blank" title="Coming Soon?">
+                    <i class="fa-brands fa-line"></i>
+                    <h4>公式LINE準備中</h4>
+                </a>
+                <a href="https://forms.gle/YCTm46odCU8bVRcC7" target="_blank" title="保護者向けは準備中です。">
+                    <i class="fa-brands fa-slack"></i>
+                    <h4>生徒向け公式Slack</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©NAGAMOTO MUNENORI -そろばんサークル- All Rights Reserved.</p>
+    </div>
+</footer>
+
+</html>
