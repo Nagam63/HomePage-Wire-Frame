@@ -1,0 +1,559 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+body {
+    background-image:none;
+    background-color: rgb(255,255,255);
+    
+}
+
+header {
+    padding: 40px 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    font-family: 'Noto Serif JP', serif;
+}
+
+header h1::first-letter {
+    font-size: 48px;
+    color: rgb(6, 158, 252);
+}
+
+
+
+section h2 {
+    margin: 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0C7AC2;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.enrollment {
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 30px;
+    border: 0px;
+    border-radius: 0px;
+    border: 0px ;
+    padding: 0px;    
+}
+
+/* ..........enrollment-0............... */
+/* enrollment-0セクション用のCSS */
+.enrollment-0 {
+    margin-top: 8vh;
+    position: relative;
+    background-image: url("../images/enrollment/IMG_4129.JPG");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.enrollment-0 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 黒いレイヤー */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+.enrollment-0 .content {
+    text-align: center;
+}
+
+.enrollment-0 .content h1,
+.enrollment-0 .content h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+.enrollment-0 .content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.enrollment-0 .content a {
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, lightblue, blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 4px rgb(4, 14, 174);
+    position: relative;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+.enrollment-0 .content a:hover {
+    background-color: #0056b3;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+    transition: 0.3s;
+    scale: .99;
+}
+/* .........enrollment-1st.......... */
+    /* enrollment-1stセクション用のCSS */
+.enrollment-1st {
+    background-color: rgba(255, 255, 255);
+    margin: 0 auto 10vh;
+    padding: 30px;
+    clip-path: polygon(
+        0% 0%,
+        100% calc(0% + 3vw),
+        100% 100%,
+        0 calc(100% - 3vw)
+        );
+}
+
+.enrollment-1st header {
+    padding: 20px 20px 20px;
+    text-align: center;
+}
+.enrollment-1st header h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.enrollment-1st header h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    margin: 10px auto 0;
+    border-bottom: 3px solid rgb(6, 158, 252);
+}
+.enrollment-1st .subcribes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    margin-bottom: 0px;
+    padding: 20px;
+    border-radius: 0px;
+    margin-bottom: 10vh;
+}
+
+.enrollment-1st .subcribes .image{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enrollment-1st .image img{
+    max-height: 40vh;
+    height: 30vh;
+    border-radius: 5px;
+}
+
+.enrollment-1st .subcribe {
+    /* max-height: 40vh; */
+    width: 59%;
+    padding: 10px 20px;
+    text-align: left;
+}
+.enrollment-1st .subcribe h3{
+    width: 100%;
+    padding: 0px 0 10px;
+    text-align: center;
+}
+.enrollment-1st .subcribe h3::after {
+    content: '';
+    display: block;
+    width: 0%;
+    margin: 0px auto 0;
+    border-bottom: 3px solid rgb(6, 158, 252);
+    transition: width 0.5s ease;
+}
+.enrollment-1st .subcribe:hover h3::after  {
+    width: 50%;
+}
+
+a
+
+.enrollment-1st  .subcribe p{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+}
+.enrollment-1st .content05 .subcribe p{
+    text-align: left;
+
+}
+
+
+
+
+/* ..........feture-2nd............... */
+
+.enrollment-2nd {
+    background-color: rgba(255, 255, 255);
+    margin: 0 auto;
+    height: 65vh;
+    display: grid;
+    place-items: center;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 3vw)
+        );
+    justify-items: stretch;
+}
+
+.enrollment-2nd section {
+    text-align: center;
+    margin-bottom: 10px;
+    background-color:  rgba(255, 255, 255,0.1);
+    padding: 0px 20px 30px;
+ 
+} 
+.enrollment-2nd header {
+    padding: 0px 20px 0px;
+    text-align: center;
+}
+.enrollment-2nd header h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.enrollment-2nd header h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    margin: 10px auto 0;
+    border-bottom: 3px solid rgb(6, 158, 252);
+}
+/* ..........feture-1st............... */
+
+/* --------------------------------------------------- */
+
+/* メディアクエリ */
+@media screen and (max-width: 768px) {
+
+    .enrollment-2nd {
+        background-color: rgba(255, 255, 255);
+        margin: 0 auto;
+        height:fit-content;
+    }
+    .enrollment-2nd .cols{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .enrollment-1st .subcribes{
+        height: 50vh;
+        margin-bottom: 0vh;
+    }
+
+    .enrollment-1st .content01,
+    .enrollment-1st .content05{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .enrollment-1st .content02,
+    .enrollment-1st .content04 {
+        flex-direction: column-reverse;
+        
+        justify-content: center;
+    }
+    .enrollment-1st .grid-item {
+        width: 45%;
+    }
+    .enrollment-1st .content01 .image,
+    .enrollment-1st .content02 .image,
+    .enrollment-1st .content01 .subcribe,
+    .enrollment-1st .content02 .subcribe {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .enrollment-1st .content01 .subcribe p,
+    .enrollment-1st .content02 .subcribe p {
+        font-size: 14px;
+    }
+}
+
+/* ..........feture-4th............... */
+
+.course-excuse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.course-excuse h3 {
+    margin: 0px 0 20px 0;
+}
+
+.course-excuse h5 {
+    margin: 0px 0 20px 0;
+}
+
+.course-row {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.course-col {
+    background: white;
+    width: 30%;
+    margin: 0px 1px 0px 0px;
+    padding-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+    height: max-content;
+}
+
+.course-col h3 {
+    margin: 5px 0;
+    border-bottom: 1px solid #a4a8d4;
+    /* 区切り線 */
+}
+
+.course-col p {
+    margin-bottom: 20px;
+}
+
+.course-col .paying {
+    margin-bottom: 0
+}
+
+.course-col01 {
+    background: rgba(248, 248, 248, 0.9);
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.course-col01:hover {
+    scale: 1.05;
+}
+
+.course-col02:hover {
+    scale: 1.07;
+}
+
+
+/* イラストのようなボタン */
+
+.course-btn {
+    background: #6bb6ff;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #003067;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    border: 2px solid #000;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.course-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #6bb6ff;
+    z-index: -1;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.course-btn::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translate3d(0, 0.40rem, -1rem);
+    transform: translate3d(0, 0.40rem, -1rem);
+    border: 2px solid #000;
+    border-radius: inherit;
+    background: #2b7fde;
+    -webkit-box-shadow: 0 0.6rem 0 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 0.4rem 0 0 rgb(0 0 0 / 20%);
+    z-index: -2;
+}
+
+.course-btn i {
+    position: absolute;
+    right: 9px;
+}
+
+.course-btn:hover {
+    transform: translate3d(0, 0.2rem, -1rem);
+}
+
+.course-btn:hover:after {
+    transform: translate3d(0, 0.2rem, -1rem);
+    box-shadow: 0 0.2rem 0 0 rgb(0 0 0 / 20%);
+}
+
+
+/* -------------------------
+    membership-term
+  ------------------------- */
+
+.membership-terms h3 {
+    margin: 0px 0 20px 0;
+}
+
+.membership-terms h4 {
+    margin: 30px 0 10px 0;
+}
+
+.membership-col {
+    background: white;
+    width: 25%;
+    margin: 0px 1px 0px 0px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.fa-angles-down {
+    margin-left: 10px;
+}
+
+.p-mention {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 100%;
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    color: #ff4081;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+footer p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.footer-social-media {
+    margin-top: 20px;
+}
+
+.footer-social-media a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-social-media a:hover {
+    color: #007bff;
+}
+
+/* Navbar CSS */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    max-height: 50px;
+}
+
+.nav-pc-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-pc-links li {
+    display: inline;
+}
+
+.nav-pc-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nav-phone .navbar-toggler {
+    border: none;
+}
+
+.offcanvas-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.offcanvas-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.offcanvas-body li {
+    margin-bottom: 10px;
+}
+
+.offcanvas-body a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.icons {
+    margin-right: 5px;
+}

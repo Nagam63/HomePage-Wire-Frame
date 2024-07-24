@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>そろばんサークル|入会に関する案内</title>
+    <!-- font awesome -->
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enrollment.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick-theme.css') }}" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon1.ico') }}" type="image/x-icon">
+</head>
+
+<body>
+    <section class="header">
+        <nav class="navbar fixed-top">
+            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/Brand-Image00.png') }}" alt="Logo" class="navbar-logo"></a>
+            <div class="nav-pc-links">
+                <ul>
+                    <li><a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a></li>
+                    <li><a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a></li>
+                    <li><a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a></li>
+                    <li><a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a></li>
+                </ul>
+            </div>
+            <div class="nav-phone">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvasNavbarLabel">そろばんサークル</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="{{ url_for('index') }}"><i class="fa-solid fa-house icons"></i> ホーム</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('features') }}"><i class="fas fa-seedling icons"></i> 特色</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('schedule') }}"><i class="fas fa-calendar-alt icons"></i>予定表</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url_for('enrollment') }}"><i class="fas fa-user-plus icons"></i> 入会案内</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    その他
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ url_for('static', filename='pdf/student-voice.pdf') }}">生徒の声</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('enrollment') }}#enrollment-faq"><i class="fa-solid fa-file-circle-question"></i> Q&A</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <i class="fa-brands fa-red-river" id="backToTop"></i>
+
+    <section class="enrollment enrollment-0">
+        <div class="overlay">
+            <div class="content">
+                <h1>ようこそ、そろばんサークルへ</h1>
+                <h4>無料体験から入会までの流れを
+                    <br>ご紹介しています。</h4>
+                <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow ">無料体験をする！！ <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4>
+            </div>
+        </div>
+    </section>
+    
+    <section class="enrollment enrollment-1st">
+        <header>
+            <h1>無料体験の流れ</h1>
+        </header>
+        
+        <div class="subcribes content01">
+            <div class="image">
+                <img src="../static/images/enrollment/process-image/apply-boy.png" alt="申し込む">
+            </div>
+            <div class="subcribe">
+                <h3>無料体験を申し込む</h3>
+                <p>そろばんサークルでは、<b>生徒一人ひとりの性格・成長・習熟度</b>に
+                    <br>応じたきめ細やかな指導を行っています。
+                    <br>全体を通して、生徒が楽しく学びながら確実にスキルを身につけられるよう、
+                    <br><br><b>基本的な指導方針は以下の通りです!</b></p>
+            </div>
+        </div>
+        <div class="subcribes content02">
+            <div class="subcribe">
+                <h3>教室で授業を体験する</h3>
+                <p>文章＋{写真複数枚（雰囲気がわかるような写真）：カルーセル式で表示｝</p>
+            </div>
+            <div class="image">
+                <img src="../static/images/enrollment/process-image/think-boy.png" alt="考える">
+            </div>
+        </div>
+        <div class="subcribes content01">
+            <div class="image">
+                <img src="../static/images/enrollment/process-image/seeing-boy.png" alt="大会画像
+                ">
+            </div>
+            <div class="subcribe">
+                <h3>入会手続きを行う</h3>
+                <p>そろばんサークルでは、<b>日頃の練習の成果を可視化するため</b>に
+                    <br>商工会議所などが主催する各種競技大会へ参加しています。
+                    <br>特徴の異なるさまざまな大会に参加することにより                    
+                    <br>競争心・協調性・自主性をみにつきます。
+                    <br><br><b><a href="{{ url_for('index') }}">↓ 各コース情報を確認する ↓</a></b></p>
+            </div>
+        </div>
+    </section>
+    <section class="enrollment enrollment-2nd">
+        <header>
+            <h1>コース情報</h1>
+        </header>
+        <section class="mission">
+            <h2>何を目指してそろばん教室を探していますか？</h2>
+            <div class="wrapper">
+                <div class="cols">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(../static/images/features/2nd/child30.jpg)">
+                                <div class="inner">
+                                    <p>理想のはじめどき</p>
+                                    <span>そろばんを身につける為の最良年齢は年長さんです。早熟な子は…</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>年中の夏過ぎです。<br>当教室では入学前に6級合格を目指します。<br>筆算脳になる前に<br>"珠算脳"を作りましょう。<br>多くが低学年の子どもたちですが、<br>上級者も多くいます。<br>"習い事を始めるなら"<br>まずそろばんサークルをご見学ください</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(../static/images/features/2nd/sea00.jpg)">
+                                <div class="inner">
+                                    <p>得られるもの</p>
+                                    <span>珠算式あんざんは、<br>親が与えれる最強の武器とも言え..</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p> そろばんサークルでは<br>大学受験や就職までも見据え、<br>”圧倒的な計算力”・”カタチある資格”<br>”高い情報処理能力”<br>”強い心と競い合える仲間”<br>様々な”みらいを生きる為に”必要なものを<br>身につける為のカリキュラムにを用意しています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url(../static/images/features/2nd/child02.jpg)" >
+                                <div class="inner">
+                                    <p>カリキュラム</p>
+                                    <span>当教室では、日本珠算連盟で1級までで<br>”そろばんを習っていた”といえるレベルの<br>計算力と暗算力を身につけ...</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>その後、全国珠算教育連盟も取り入れ、小数の入った暗算で高段位を目指します。<br><br>また、他教室では学べない珠算式あんざんを用いた応用計算では割合や分数、損益計算や最小公倍数、出会い算などを学び、
+                                        <br>応用の利く能力として定着させます。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+    </section>
+    
+    <section class="en-sec course-excuse" id="course-excuse">
+        <h2>体験予約</h2>
+        <h3>コース紹介と各種特典</h3>
+        <h5>"申し込む"をクリックすると対象のコース希望として、体験予約フォームが出てきます。<br>お子様の氏名、生年月日、保護者様の珠算経験の有無、連絡先、電話番号、体験希望時間帯の曜日とクラス、考慮事項などの記入を頂きまして、<br>こちらからの確認メールをもちまして、予約完了とさせていただきます。</h5>
+        <div class="row course-row">
+            <div class="course-col mycol course-col01">
+                <div class="layer layer01">
+                    <h3>週2日コース</h3>
+                    <p class="paying">￥9800(月額)</p>
+                    <p class="perday p01">(￥1500 (1日あたり))</p>
+                    <p>✓ 週2日の固定クラス</p>
+
+                    <a href="https://forms.gle/zF6fgWyWxWVAcbSG9" target="_blank" class="course-btn-link">
+                        <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+                </div>
+            </div>
+            <div class="course-col mycol course-col02">
+                <div class="layer layer02">
+                    <h3>フリ－コース</h3>
+                    <p class="paying">￥12000(月額)</p>
+                    <p class="perday p02">(￥1300以下 (1日あたり))</p>
+                    <p>✓ 固定クラス外も通い放題</p>
+
+                    <p><a href="{{ url_for('static', filename='pdf/course-example.pdf') }}" target="_blank" alt="pdf">受講者のスケジュール例はこちらから<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </p>
+                    <p>+</p>
+                    <p>✓ 荷物が置いていける専用ロッカー</p>
+                    <p>✓ 2コマ連続で受講できる</p>
+                    <p>✓別室で休憩が取れる</p>
+                    <p>✓ 進級が早い</p>
+
+                    <a href="https://forms.gle/tDZi2uUytBNe4N139" target="_blank" class="course-btn-link">
+                        <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- Scroll-smooth -->
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function() {
+                var speed = 500; // スクロール速度(ミリ秒)
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - 150;
+                $('html, body').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
+            });
+        });
+    </script>
+    <!-- To The Top -->
+    <script>
+        $(document).ready(function() {
+            $('#backToTop').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500); // 500ミリ秒でトップに戻る
+            });
+
+            // オプション: ページの特定の位置より下にスクロールした時にのみボタンを表示
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) { // 100pxより下にスクロールしたら表示
+                    $('#backToTop').fadeIn();
+                } else {
+                    $('#backToTop').fadeOut();
+                }
+            });
+
+            // 初期状態ではボタンを隠す
+            $('#backToTop').hide();
+        });
+    </script>
+</body>
+<footer>
+    <div class="footer-content">
+        <div class="footer-main">
+            <h2>そろばんサークル</h2>
+            <h5>〒113-0021 東京都文京区本駒込2丁目10-4 四季ビル2F</h5>
+            <h5>電話: 080-3722-3544 <br>※授業時間内(15:00~20:00)のご電話はご遠慮ください。</h5>
+            <div class="footer-social-media">
+                <a href="https://www.instagram.com/sorobansakuru" target="_blank" title="Follow us on Instagram">
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <h4 class="open-sesami">公式Instagram公開中</h4>
+                </a>
+                <a href="https://www.youtube.com/@SorobanCircle0601" target="_blank" title="Subscribe to our YouTube channel">
+                    <i class="fa-brands fa-youtube"></i>
+                    <h4>公式YouTube準備中</h4>
+                </a>
+                <a href=" " target="_blank" title="Coming Soon?">
+                    <i class="fa-brands fa-line"></i>
+                    <h4>公式LINE準備中</h4>
+                </a>
+                <a href="https://forms.gle/YCTm46odCU8bVRcC7" target="_blank" title="保護者向けは準備中です。">
+                    <i class="fa-brands fa-slack"></i>
+                    <h4>生徒向け公式Slack</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©NAGAMOTO MUNENORI -そろばんサークル- All Rights Reserved.</p>
+    </div>
+</footer>
+</html>
+
+</html>

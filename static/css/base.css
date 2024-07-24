@@ -1,0 +1,1229 @@
+/* style.css */
+
+b {
+    font-weight: bolder;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: black;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: black;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: black;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: black;
+}
+
+h5,
+p {
+    font-size: 1rem;
+    margin: 0;
+    color: black;
+}
+
+.navbar ul li a {
+    font-size: 1.5rem;
+}
+
+.myscrollspy ul li a {
+    font-size: 1.3rem;
+}
+
+body {
+    font-family: "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ナビゲーションバーの高さに応じて調整 */
+    background-image: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/raw-background/IMG_9925.JPG");
+    /* 背景画像のパスを指定 */
+    background-size: cover;
+    /* 画像がコンテナを完全に覆うように設定 */
+    background-position: center;
+    /* 画像を中央に配置 */
+    background-repeat: no-repeat;
+    /* 画像が繰り返されないように設定 */
+    background-attachment: fixed;
+    /* 背景画像がスクロールに追従しないように設定 */
+    color: white;
+    /* 文字色を黒に設定 */
+    text-align: center;
+    /* 全てのテキストを中央揃えに */
+    overflow-x: hidden;
+}
+
+
+/* -------------------------
+    header
+  ------------------------- */
+
+
+/* ナビゲーションバー全体をコンテナとして設定 */
+
+.fixed-top {
+    z-index: 10;
+}
+
+.navbar {
+    background: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 120px;
+    margin: 0px 0px 0px 28px;
+}
+
+.nav-pc-links ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0vw 70vw 0vw 0vw;
+    /* 中央揃えに */
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav-pc-links ul li a {
+    color: black;
+    padding: 0 2px;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* 色の変化にアニメーション効果を追加 */
+}
+
+.nav-pc-links ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-pc-links ul li:hover::after {
+    width: 80%;
+}
+
+.nav-pc-links ul li a:hover {
+    font-weight: bold;
+    /* ホバー時の色 */
+}
+
+.icons {
+    padding-right: 10px;
+}
+
+.navbar ul li:hover .icons {
+    color: green;
+    transition: ease-in-out 0.5s;
+}
+
+
+/* -------------------------
+    /pc header
+  ------------------------- */
+
+
+/* -------------------------
+    phone header
+  ------------------------- */
+
+.nav-phone {
+    display: none;
+}
+
+
+/* -------------------------
+    phone header
+  ------------------------- */
+
+footer {
+    position: absolute;
+    background: rgba(255, 255, 255);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0vw;
+    padding: 10px 0 20px;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px rgba(0, 0, 0, 0.25);
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-main {
+    flex: 4;
+    margin: 0vh 0vw 0vh 0vw;
+}
+
+.footer-main h2 {
+    white-space: nowrap;
+    color: black;
+    margin: 15px 0;
+}
+
+.footer-main h5 {
+    margin: 20px 0;
+}
+
+.footer-social-media {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.footer-social-media h4 {
+    font-weight: 400;
+}
+
+.footer-social-media a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    /* アイコンの色 */
+    margin-right: 50px;
+    /* アイコン間の余白 */
+}
+
+.footer-social-media .fa-brands {
+    font-size: 50px;
+}
+
+.footer-social-media .open-sesami {
+    font-weight: bold;
+}
+
+.fa-square-instagram {
+    color: rgba(293, 53, 132, 1);
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: 0.3s;
+}
+
+.fa-square-instagram:hover {
+    text-shadow: 1px 1px 4px rgba(293, 53, 132, 0.7);
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: 0.3s;
+}
+
+.fa-youtube {
+    /* color: red; */
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: ease-in-out 0.5s;
+}
+
+.fa-youtube:hover {
+    text-shadow: 1px 1px 4px rgba(255, 0, 0, 0.8);
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: 0.3s;
+}
+
+.fa-line {
+    /* color: green; */
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: ease-in-out 0.5s;
+}
+
+.fa-slack {
+    color: red;
+    /* アイコンの色：ホバーまたはフォーカス時 */
+    transition: ease-in-out 0.5s;
+}
+
+.footer-bottom {
+    width: 100%;
+}
+
+.offcanvas {
+    position: fixed;
+    bottom: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    color: var(--bs-offcanvas-color);
+    visibility: hidden;
+    background: linear-gradient( 159deg, rgba(255, 255, 255, 0.97) 40%, rgba(25, 200, 255, 0.97) 100%);
+    background-clip: padding-box;
+    outline: 0;
+    transition: var(--bs-offcanvas-transition);
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    /* 画面の下から20pxの位置 */
+    right: 40px;
+    /* 画面の右から20pxの位置 */
+    font-size: 60px;
+    /* アイコンのサイズ */
+    transform: rotate(45deg);
+    /* 45度右回転 */
+    cursor: pointer;
+    /* ホバー時にカーソルをポインターに */
+    z-index: 9;
+    /* 他の要素の上に表示 */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0);
+    color: black;
+    text-shadow: 1px 1px 6px rgba(255, 255, 255);
+}
+
+
+/* fin -header-footer */
+
+
+/*-----------------------------
+
+    レスポンシブデザインの調整 
+
+------------------------------*/
+
+
+/* Dell */
+
+@media (max-width: 1440px) {
+    /*------------------
+        font-size
+    ----------------------*/
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5,
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.3rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 1rem;
+    }
+    /* -------------------------
+        header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 28px;
+    }
+    .nav-pc-links ul {
+        margin: 0vw 60vw 0vw 0vw;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+  ------------------------- */
+    .nav-phone {
+        display: none;
+    }
+    /*--------------------
+        footer 
+    ------------------------*/
+    footer {
+        margin: 0vw;
+        padding: 10px 0;
+    }
+    .footer-main h2 {
+        margin: 13px 0;
+    }
+    .footer-main h5 {
+        margin: 15px 0;
+    }
+    .footer-social-media {
+        margin: 20px 0;
+    }
+    .footer-social-media a {
+        margin-right: 45px;
+        /* アイコン間の余白 */
+    }
+    .footer-social-media .fa-brands {
+        font-size: 45px;
+    }
+    .footer-bottom {
+        width: 100%;
+    }
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        /* 画面の下から20pxの位置 */
+        right: 40px;
+        /* 画面の右から20pxの位置 */
+        font-size: 50px;
+    }
+}
+
+
+/* MacBookAir  */
+
+@media (max-width: 1280px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5,
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.3rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 1rem;
+    }
+    /* -------------------------
+        header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 28px;
+    }
+    .nav-pc-links ul {
+        margin: 0vw 55vw 0vw 0vw;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+  ------------------------- */
+    .nav-phone {
+        display: none;
+    }
+    /*--------------------
+        footer 
+    ------------------------*/
+    footer {
+        margin: 0vw;
+        padding-top: 10px;
+    }
+    .footer-main h2 {
+        margin: 13px 0;
+    }
+    .footer-main h5 {
+        margin: 15px 0;
+    }
+    .footer-social-media {
+        margin: 20px 0;
+    }
+    .footer-social-media a {
+        margin-right: 45px;
+        /* アイコン間の余白 */
+    }
+    .footer-social-media .fa-brands {
+        font-size: 45px;
+    }
+    .footer-bottom {
+        width: 100%;
+    }
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        /* 画面の下から20pxの位置 */
+        right: 40px;
+        /* 画面の右から20pxの位置 */
+        font-size: 50px;
+    }
+}
+
+
+/* iPad Pro 11 横 */
+
+@media (max-width: 1194px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5,
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.3rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 1rem;
+    }
+    /* -------------------------
+        header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 28px;
+    }
+    .nav-pc-links ul {
+        margin: 0vw 51vw 0vw 0vw;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+  ------------------------- */
+    .nav-phone {
+        display: none;
+    }
+    /*--------------------
+        footer 
+    ------------------------*/
+    footer {
+        margin: 0vw;
+        padding-top: 10px;
+    }
+    .footer-main h2 {
+        margin: 13px 0;
+    }
+    .footer-main h5 {
+        margin: 15px 0;
+    }
+    .footer-social-media {
+        margin: 20px 0;
+    }
+    .footer-social-media a {
+        margin-right: 45px;
+        /* アイコン間の余白 */
+    }
+    .footer-social-media .fa-brands {
+        font-size: 43px;
+    }
+    .footer-bottom {
+        width: 100%;
+    }
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        /* 画面の下から20pxの位置 */
+        right: 40px;
+        /* 画面の右から20pxの位置 */
+        font-size: 50px;
+    }
+}
+
+
+/* iPad Mini 横 */
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5,
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.2rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+        header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links ul {
+        margin: 0vw 51vw 0vw 0vw;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+  ------------------------- */
+    .nav-phone {
+        display: none;
+    }
+    /*--------------------
+        footer 
+    ------------------------*/
+    footer {
+        margin: 0vw;
+        padding-top: 10px;
+    }
+    .footer-main h2 {
+        margin: 13px 0;
+    }
+    .footer-main h5 {
+        margin: 15px 0;
+    }
+    .footer-social-media {
+        margin: 20px 0;
+    }
+    .footer-social-media a {
+        margin-right: 45px;
+        /* アイコン間の余白 */
+    }
+    .footer-social-media .fa-brands {
+        font-size: 40px;
+    }
+    .footer-bottom {
+        width: 100%;
+    }
+    #backToTop {
+        position: fixed;
+        bottom: 40px;
+        /* 画面の下から20pxの位置 */
+        right: 40px;
+        /* 画面の右から20pxの位置 */
+        font-size: 50px;
+    }
+}
+
+
+/* iPhone 15PRO MAX 横  Humburger*/
+
+@media (max-width: 932px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.7rem;
+    }
+    .navbar ul li a {
+        font-size: 1.2rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+        header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    .navbar {
+        background: transparent;
+    }
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+  ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 40px;
+    }
+    .navbar-toggler {
+        padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+        font-size: var(--bs-navbar-toggler-font-size);
+        line-height: 1;
+        color: var(--bs-navbar-color);
+        background-color: white;
+        border: var(--bs-border-width) solid white;
+        border-radius: var(--bs-navbar-toggler-border-radius);
+        transition: var(--bs-navbar-toggler-transition);
+    }
+    .navbar-toggler:focus {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: 0 0 0 white;
+    }
+    .offcanvas.offcanvas-end {
+        width: 20%;
+    }
+    .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        padding: 2px 0 0 15px;
+        overflow-y: auto;
+    }
+    .nav-phone ul li a {
+        color: black;
+        padding: 0 2px;
+        text-decoration: none;
+        transition: color 0.3s;
+        /* 色の変化にアニメーション効果を追加 */
+    }
+    .nav-phone ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #f44336;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+    .nav-phone ul li:hover::after {
+        width: 80%;
+    }
+    .navbar-nav {
+        align-items: flex-start;
+    }
+    .nav-item {
+        padding: 0 0 5px 0;
+    }
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    .dropdown-menu.show {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 10px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+        footer 
+    ------------------------*/
+    footer {
+        display: none;
+    }
+}
+
+
+/* iPhone 13Pro 横 */
+
+@media (max-width: 844px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.7rem;
+    }
+    .navbar ul li a {
+        font-size: 1.2rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1rem;
+    }
+    .navbar ul li a {
+        font-size: 1.1rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 0.9rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+            header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    .navbar {
+        background: transparent;
+    }
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+    ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 40px;
+    }
+    .offcanvas.offcanvas-end {
+        width: 20%;
+    }
+    .offcanvas-body {
+        padding: 5px 0 0 15px;
+    }
+    .nav-phone ul li a {
+        padding: 0 2px 0 0;
+    }
+    .nav-phone ul li:hover::after {
+        width: 100%;
+    }
+    .nav-item {
+        padding: 0 0 10px 0;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    .dropdown-menu.show {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 8px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+    footer 
+------------------------*/
+    footer ------------------------*/ footer {
+        display: none;
+    }
+}
+
+
+/* iPad Pro 11  */
+
+@media (max-width: 834px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.3rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1.2rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+            header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+    ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+    }
+    .offcanvas.offcanvas-end {
+        width: 30%;
+    }
+    .offcanvas-body {
+        padding: 50px 0 0 20px;
+    }
+    .nav-phone ul li a {
+        padding: 0 2px 0 0;
+    }
+    .nav-phone ul li:hover::after {
+        width: 100%;
+    }
+    .nav-item {
+        padding: 0 0 30px 0;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 8px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+    footer 
+------------------------*/
+    footer ------------------------*/ footer {
+        display: none;
+    }
+}
+
+
+/* iPad Mini */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1.3rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1.2rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+            header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+    ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+    }
+    .offcanvas.offcanvas-end {
+        width: 30%;
+    }
+    .offcanvas-body {
+        padding: 50px 0 0 20px;
+    }
+    .nav-phone ul li a {
+        padding: 0 2px 0 0;
+    }
+    .nav-phone ul li:hover::after {
+        width: 100%;
+    }
+    .nav-item {
+        padding: 0 0 30px 0;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 8px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+    footer 
+------------------------*/
+    footer ------------------------*/ footer {
+        display: none;
+    }
+}
+
+
+/* iPhone 15PRO MAX  */
+
+@media (max-width: 430px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+            header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+    ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+    }
+    .offcanvas.offcanvas-end {
+        width: 45%;
+    }
+    .offcanvas-body {
+        padding: 20px 0 0 20px;
+    }
+    .nav-phone ul li a {
+        padding: 0 2px 0 0;
+    }
+    .nav-phone ul li:hover::after {
+        width: 100%;
+    }
+    .nav-item {
+        padding: 0 0 20px 0;
+    }
+    .nav-item.dropdown {
+        padding: 0 0 10px 0;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 8px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+    footer 
+------------------------*/
+    footer ------------------------*/ footer {
+        display: none;
+    }
+}
+
+
+/* iPhone 13Pro */
+
+@media (max-width: 390px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 0.9rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    .navbar ul li a {
+        font-size: 1rem;
+    }
+    .navbar ul li .dropdown-item {
+        font-size: 1rem;
+    }
+    .myscrollspy .mynav ul li a {
+        font-size: 0.9rem;
+    }
+    /* -------------------------
+            header
+    ------------------------- */
+    /* ナビゲーションバー全体をコンテナとして設定 */
+    nav img {
+        width: 100px;
+        margin: 0px 0px 0px 20px;
+    }
+    .nav-pc-links {
+        display: none;
+    }
+    /* -------------------------
+        /pc header
+    ------------------------- */
+    /* -------------------------
+        phone header
+    ------------------------- */
+    .nav-phone {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+    }
+    .offcanvas.offcanvas-end {
+        width: 45%;
+    }
+    .offcanvas-body {
+        padding: 20px 0 0 20px;
+    }
+    .nav-phone ul li a {
+        padding: 0 2px 0 0;
+    }
+    .nav-phone ul li:hover::after {
+        width: 100%;
+    }
+    .nav-item {
+        padding: 0 0 20px 0;
+    }
+    .nav-item.dropdown {
+        padding: 0 0 10px 0;
+    }
+    .dropdown-menu {
+        min-width: 9rem;
+    }
+    /* nav-icons */
+    .icons {
+        padding-right: 8px;
+    }
+    .navbar ul li:hover .icons {
+        color: green;
+        transition: ease-in-out 0.5s;
+    }
+    /*--------------------
+    footer 
+------------------------*/
+    footer ------------------------*/ footer {
+        display: none;
+    }
+}
