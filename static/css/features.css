@@ -111,6 +111,7 @@ section p {
     transition: 0.3s;
     scale: .99;
 }
+
 /* .........feature-1st.......... */
     
 .feature-1st {
@@ -210,6 +211,7 @@ section p {
     margin: 10px auto 0;
     border-bottom: 3px solid rgb(6, 158, 252);
 }
+
 /* ..........feture-3rd............... */
 /* feature-3rdセクション用のCSS */
 .feature-3rd {
