@@ -13,8 +13,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/enrollment.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enrollment.css') }}">
+
     <!-- Slick Slider CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slick-theme.css') }}" />
@@ -127,109 +128,206 @@
                     <br>商工会議所などが主催する各種競技大会へ参加しています。
                     <br>特徴の異なるさまざまな大会に参加することにより                    
                     <br>競争心・協調性・自主性をみにつきます。
-                    <br><br><b><a href="{{ url_for('index') }}">↓ 各コース情報を確認する ↓</a></b></p>
+                    <br><br><b><a href="{{ url_for('enrollment') }}#course-excuse">↓ 各コース情報を確認する ↓</a></b></p>
             </div>
         </div>
     </section>
-    <section class="enrollment enrollment-2nd">
+    <section class="enrollment enrollment-2nd" id="course-excuse">
         <header>
             <h1>コース情報</h1>
         </header>
         <section class="mission">
-            <h2>おこさまにあったコースをお選びください</h2>
-            <div class="wrapper">
-                <div class="cols">
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(../static/images/features/2nd/child30.jpg)">
-                                <div class="inner">
-                                    <p>理想のはじめどき</p>
-                                    <span>そろばんを身につける為の最良年齢は年長さんです。早熟な子は…</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>年中の夏過ぎです。<br>当教室では入学前に6級合格を目指します。<br>筆算脳になる前に<br>"珠算脳"を作りましょう。<br>多くが低学年の子どもたちですが、<br>上級者も多くいます。<br>"習い事を始めるなら"<br>まずそろばんサークルをご見学ください</p>
-                                </div>
-                            </div>
-                        </div>
+            <h2>おこさまのスタイルに合わせてお選びください</h2>
+            <p>現時点でお考えのコースをお選びください。入会時・入会後でもご変更いただけます。
+                <br>よくあるご質問は<a href="#enrollment-faq">こちらから<i class="fas fa-angle-down"></i></a>
+            </p>
+            <div class="course-cards">
+                <div class="course-card standard-course">
+                    <div class="course-header">
+                        <h3>週2日コース</h3>
+                        <p class="price">￥9800/月</p>
                     </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(../static/images/features/2nd/sea00.jpg)">
-                                <div class="inner">
-                                    <p>得られるもの</p>
-                                    <span>珠算式あんざんは、<br>親が与えれる最強の武器とも言え..</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p> そろばんサークルでは<br>大学受験や就職までも見据え、<br>”圧倒的な計算力”・”カタチある資格”<br>”高い情報処理能力”<br>”強い心と競い合える仲間”<br>様々な”みらいを生きる為に”必要なものを<br>身につける為のカリキュラムにを用意しています。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="course-body">
+                        <p>週2回の定時指定固定クラスのコース</p>
                     </div>
-                    <div class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url(../static/images/features/2nd/child02.jpg)" >
-                                <div class="inner">
-                                    <p>カリキュラム</p>
-                                    <span>当教室では、日本珠算連盟で1級までで<br>”そろばんを習っていた”といえるレベルの<br>計算力と暗算力を身につけ...</span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>その後、全国珠算教育連盟も取り入れ、小数の入った暗算で高段位を目指します。<br><br>また、他教室では学べない珠算式あんざんを用いた応用計算では割合や分数、損益計算や最小公倍数、出会い算などを学び、
-                                        <br>応用の利く能力として定着させます。</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="course-footer">
+                        <a href="https://forms.gle/zF6fgWyWxWVAcbSG9" class="course-btn">申し込み <i class="fas fa-angle-right"></i></a>
                     </div>
-                    
-                    
+                </div>
+                <div class="course-card premium-course">
+                    <div class="course-header">
+                        <h3>フリーコース</h3>
+                        <p class="price">￥12000/月</p>
+                    </div>
+                    <div class="course-body">
+                        <p>✓ 固定クラス外も通い放題</p>
+                        <p>✓ 荷物が置いていける専用ロッカー</p>
+                        <p>✓ 2コマ連続で受講できる</p>
+                        <p>✓ 別室で休憩が取れる</p>
+                        <p>✓ 進級が早い</p>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://forms.gle/tDZi2uUytBNe4N139" class="course-btn">申し込み <i class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="ribbon">
+                        おすすめ!
+                    </div>
                 </div>
             </div>
         </section>
     </section>
     
-    <section class="en-sec course-excuse" id="course-excuse">
-        <h2>体験予約</h2>
-        <h3>コース紹介と各種特典</h3>
-        <h5>"申し込む"をクリックすると対象のコース希望として、体験予約フォームが出てきます。<br>お子様の氏名、生年月日、保護者様の珠算経験の有無、連絡先、電話番号、体験希望時間帯の曜日とクラス、考慮事項などの記入を頂きまして、<br>こちらからの確認メールをもちまして、予約完了とさせていただきます。</h5>
-        <div class="row course-row">
-            <div class="course-col mycol course-col01">
-                <div class="layer layer01">
-                    <h3>週2日コース</h3>
-                    <p class="paying">￥9800(月額)</p>
-                    <p class="perday p01">(￥1500 (1日あたり))</p>
-                    <p>✓ 週2日の固定クラス</p>
-
-                    <a href="https://forms.gle/zF6fgWyWxWVAcbSG9" target="_blank" class="course-btn-link">
-                        <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+    <section class="enrollment-3rd"id="class-excuse">
+        <header>
+            <h1>クラス情報</h1>
+        </header>
+        <div class="class-info">
+            <h2>授業曜日とクラス情報</h2>
+            <p>授業曜日は火・水・木・金です。以下のクラスからお選びください。<br>スタートは基本1部または2部です。</p>
+        </div>
+        <div class="timeline-horizontal">
+            <div class="timeline-bar"></div>
+            <div class="timeline-item-horizontal top">
+                <div class="timeline-content-horizontal">
+                    <h3>1部</h3>
+                    <p>授業時間: <b>15:00〜15:45</b></p>
+                    <p>推奨:<b> 幼児・入門</b></p>
                 </div>
+                <div class="timeline-icon"><i class="fas fa-child"></i></div>
             </div>
-            <div class="course-col mycol course-col02">
-                <div class="layer layer02">
-                    <h3>フリ－コース</h3>
-                    <p class="paying">￥12000(月額)</p>
-                    <p class="perday p02">(￥1300以下 (1日あたり))</p>
-                    <p>✓ 固定クラス外も通い放題</p>
-
-                    <p><a href="{{ url_for('static', filename='pdf/course-example.pdf') }}" target="_blank" alt="pdf">受講者のスケジュール例はこちらから<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </p>
-                    <p>+</p>
-                    <p>✓ 荷物が置いていける専用ロッカー</p>
-                    <p>✓ 2コマ連続で受講できる</p>
-                    <p>✓別室で休憩が取れる</p>
-                    <p>✓ 進級が早い</p>
-
-                    <a href="https://forms.gle/tDZi2uUytBNe4N139" target="_blank" class="course-btn-link">
-                        <button class="course-btn">申し込み<i class="fas fa-angle-right fa-position-right"></i></button></a>
+            <div class="timeline-item-horizontal bottom">
+                <div class="timeline-content-horizontal">
+                    <h3>2部</h3>
+                    <p>授業時間: 16:00〜17:00</p>
+                    <p>推奨: 小学生入門・4級まで</p>
                 </div>
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+            </div>
+            <div class="timeline-item-horizontal top">
+                <div class="timeline-content-horizontal">
+                    <h3>3部</h3>
+                    <p>授業時間: 17:00〜18:30</p>
+                    <p>推奨: 準1級〜3級</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-medal"></i></div>
+            </div>
+            <div class="timeline-item-horizontal bottom">
+                <div class="timeline-content-horizontal">
+                    <h3>4部</h3>
+                    <p>授業時間: 18:30〜20:00</p>
+                    <p>推奨: 1級・段位</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
             </div>
         </div>
     </section>
+   
+    <section class="enrollment enrollment-4th" id="enrollment-faq">
+        <header>
+            <h1>Q &A</h1>
+        </header>
+        <div class="faq">
+            <h2>よくあるご質問</h2>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q1. 無料体験はどうすれば申し込めますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A1. 無料体験はコース情報の「ご希望コースの<a href="#course-excuse">申し込み</a>」ボタンからお申し込みいただけます。
+                        <br>なお、体験授業時や入会後でも、お子さまの状況や保護者の方のスケジュールに合わせて
+                        <br>変更希望月の一ヶ月前までにご申請いただくことでご変更いただけます。</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q2. 授業はどのように進められますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A2. 授業は生徒一人ひとりのペースに合わせて進められます。
+                        <br>詳細は<a href="features.html#feature-info">授業情報のセクション</a>をご覧ください。</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q3. 振替授業は可能ですか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A3. はい、事前にご連絡いただければ基本的に
+                        <br>固定クラス時間外への振替授業も可能です。</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q4. 幼稚園生からでも始められますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A4. 年中さんからのスタートを推奨していますが、鉛筆が持てれば年少さんから始められます。
+                        <br>無料体験の際に各種ご相談を受け付けておりますので、ぜひ体験授業を<a href="#course-excuse">申し込みください。</a></p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q5. どのようなクラスがありますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A5. 初心者向けから上級者向けまで、幅広いクラスをご用意しております。
+                        <br>詳細は<a href="#class-excuse">クラス情報</a>をご覧ください。</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q6. 週何回通えますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A6. 週2日コースでは週2回の通学が固定されていますが、
+                        <br>フリーコースでは週に2コマ以上の通学を推奨しております。
+                        <br>詳細は<a href="#course-excuse">コース情報</a>をご覧ください。</p>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Q7. 推奨時間からずらして、迎えの時間に合わせることはできますか？</h3>
+                </div>
+                <div class="faq-answer">
+                    <p>A7. 同じ進捗のお子さまと一緒に学習を進めることで成長速度が大幅に向上することを実感しておりますが、
+                        保護者の方のご事情をお聞きした上で、柔軟な対応が可能です。
+                        <br>詳細は<a href="#course-excuse">体験授業</a>の際にお気軽にご相談ください。</p>
+                </div>
+            </div>
+            <p>
+                <br>その他ご質問は、体験授業の際にお伺いしております。
+                <br>千石駅より徒歩1分。ぜひ一度教室まで足をお運びください。
+                <br><a href="#course-excuse"><b>お申し込みはこちらから</b><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </p>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+    
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', function () {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+    
     
     
     

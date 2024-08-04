@@ -214,11 +214,11 @@ a
 
 
 /* ..........feture-2nd............... */
-
+/* ..........feture-3rd............... */
 .enrollment-2nd {
     background-color: rgba(255, 255, 255);
     margin: 0 auto;
-    height: 65vh;
+    height: fit-content;
     display: grid;
     place-items: center;
     clip-path: polygon(
@@ -226,21 +226,22 @@ a
         100% 0,
         100% 100%,
         0 calc(100% - 3vw)
-        );
+    );
     justify-items: stretch;
 }
 
 .enrollment-2nd section {
     text-align: center;
     margin-bottom: 10px;
-    background-color:  rgba(255, 255, 255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 0px 20px 30px;
- 
-} 
+}
+
 .enrollment-2nd header {
     padding: 0px 20px 0px;
     text-align: center;
 }
+
 .enrollment-2nd header h1 {
     position: relative;
     display: inline-block;
@@ -256,8 +257,353 @@ a
     margin: 10px auto 0;
     border-bottom: 3px solid rgb(6, 158, 252);
 }
-/* ..........feture-1st............... */
 
+.course-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    gap: 20px;
+    padding: 20px;
+}
+
+.course-card {
+    background: linear-gradient(to bottom right, #6ac1ff, #4ba3f2);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    width: 300px;
+    padding: 20px;
+    transition: transform 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* ここで共通の高さを設定 */
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+.course-header {
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.course-header h3 {
+    font-size: 24px;
+    margin: 0;
+}
+.course-header h3::first-letter {
+    font-size: 30px;
+    color: rgb(255, 2555, 255);
+    display: inline-block; /* transformを適用するために追加 */
+    transform: rotate(90deg); /* 90度右に回転 */
+}
+.course-header .price {
+    font-size: 20px;
+    margin: 0;
+}
+
+.course-body {
+    padding: 10px 0;
+}
+
+.course-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.standard-course .course-btn {
+    background: #007bff; /* 週2日コースのボタン色 */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.course-btn:hover {
+    background: #0056b3;
+}
+
+.premium-course {
+    background: linear-gradient(to bottom right, #f7b733, #fc4a1a);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    height: 400px; /* ここで共通の高さを設定 */
+}
+.premium-course  .course-body p::first-letter {
+    font-size: 20px;
+    color: rgb(255, 2555, 255);
+}
+.premium-course .course-btn {
+    background: #f0932b; /* 週2日コースのボタン色 */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.ribbon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4081;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    transform: rotate(45deg);
+}
+
+/* フリーコースのボタンの色を変更 */
+.premium-course .course-btn::before {
+    background: #f0932b; /* フリーコースのボタン色 */
+    border-color: #f0932b;
+}
+.premium-course .course-btn::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translate3d(0, 0.40rem, -1rem);
+    transform: translate3d(0, 0.40rem, -1rem);
+    border: 2px solid #000;
+    border-radius: inherit;
+    background: #f0932b;
+    -webkit-box-shadow: 0 0.6rem 0 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 0.4rem 0 0 rgb(0 0 0 / 20%);
+    z-index: -2;
+}
+
+.premium-course .course-btn:hover::before {
+    background: #ffb74d !important; /* フリーコースのボタンのホバー色 */
+    border-color: #ffb74d !important;
+}
+
+
+/* ..........feture-2nd............... */
+
+/* ..........feture-3rd............... */
+
+
+.enrollment-3rd {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.enrollment-3rd header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.class-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.class-info p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.timeline-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.timeline-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #ccc;
+    z-index: 0;
+}
+
+.timeline-item-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 20%;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.timeline-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #b3faff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px; /* アイコンとカードの間のスペース */
+    z-index: 2;
+    position: absolute; /* 位置を固定 */
+    top: 50%; /* 棒に対して中央に配置 */
+    transform: translateY(-50%); /* アイコンを棒に重ねる */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-content-horizontal {
+    padding: 20px;
+    background-color: #b3faff;
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.timeline-item-horizontal.top .timeline-icon {
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.timeline-item-horizontal.bottom .timeline-icon {
+    top: 0;
+    transform: translateY(-50%);
+}
+
+.timeline-item-horizontal.top .timeline-content-horizontal {
+    margin-bottom: 60px; /* 上部に余白を確保 */
+}
+
+.timeline-item-horizontal.bottom .timeline-content-horizontal {
+    margin-top: 60px; /* 下部に余白を確保 */
+}
+
+.timeline-content-horizontal h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.timeline-content-horizontal p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.enrollment-3rd .timeline-item-horizontal .timeline-content-horizontal {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 23vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.enrollment-3rd .timeline-item-horizontal:hover .timeline-content-horizontal {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgb(151, 213, 255),#b3faff); /* ホバー時の水系グラデーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.enrollment-3rd .timeline-item-horizontal:hover .timeline-icon {
+    background: #3e9eff
+}
+/* ..........feture-3rd............... */
+
+
+/* ..........feture-4th............... */
+.enrollment-4th {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.enrollment-4th header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question h3 {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.faq-question h3:hover {
+    color: #0056b3;
+    background-color: #e9f5ff;
+}
+
+.faq-answer {
+    display: none;
+    padding-left: 20px;
+    border-left: 3px solid #007bff;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    color: #666;
+}
+
+.faq-answer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ..........feture-4th............... */
 /* --------------------------------------------------- */
 
 /* メディアクエリ */
@@ -306,7 +652,7 @@ a
     }
 }
 
-/* ..........feture-4th............... */
+/* ..........feture-3rd............... */
 
 .course-excuse{
     display: flex;
