@@ -1,107 +1,58 @@
-.body-section {
-    margin: 0 20px
+body{
+    background-image: linear-gradient(161deg, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1)), url("../images/raw-background/IMG_9925.JPG");
+    /* 背景画像のパスを指定 */
+    background-size: cover;
+    background-position: center;
+    
 }
 
-.ind-sec {
-    background: linear-gradient(159deg, rgba(255, 255, 255, 0.97) 40%, rgba(25, 200, 255, 0.97) 100%);
-    /* background: linear-gradient(159deg, rgba(255, 255, 255, 0.97) 40%, rgba(255, 25, 25, 0.97) 100%); */
-    width: 100%;
-    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, .4);
-    display: flex;
+header h1 {
+    font-size: 40px;
+}
+header h1::first-letter {
+    font-size: 48px;
+    color: rgb(6, 158, 252);
+}
+h1::after {
+    content: '';
+    display: block;
+    width: 25%;
+    margin: 0px auto 0;
+    border-bottom: 1px solid rgb(6, 158, 252);
+    transition: width 0.6s ease-in-out, left 0.6s ease-in-out;
+    position: relative;
+    left: -15%;
 }
 
-
-/* font-size */
-
-
+section:hover h1::after {
+    border-bottom: 3px solid rgb(6, 158, 252);
+    width: 30%;
+    left: 0;
+}
 /* -------------------------
         boot-section 
   ------------------------- */
-
-.boot-section {
-    margin: 120px 0 20px 0;
-}
-
-.carousel-item h1 {
-    margin: 20px;
-}
-
-.carousel-item p {
-    margin: 20px 0;
-}
-
-.container {
-    height: 500px;
+.index-0th {
+    height: 75vh;
+    margin-top: 0vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
-/* -------------------------
-    slide-one
-  ------------------------- */
-
-.slide-one {
-    background: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255), rgba(255, 255, 255), rgba(255, 255, 255));
-    border-radius: 20px;
+.index-0th h1{
+    margin:10vh 0 2vh;
 }
 
-.carousel-item .fa-arrow-up-right-from-square {
-    padding-left: 8px;
+section:hover h1::after {
+    width: 95%;
+    left: 0;
+}
+.index-0th p{
+    margin-bottom:2vh ;
 }
 
-.container h1,
-.container p {
-    color: blue;
-}
-
-.slide-one a {
-    background: linear-gradient(to right, lightblue, blue);
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    box-shadow: 2px 2px 4px rgb(4, 14, 174);
-    border: 1px solid white;
-    padding: 12px 34px;
-    position: relative;
-    scale: 1.01;
-    cursor: pointer;
-}
-
-.slide-one a:hover {
-    box-shadow: 0px 0px 0px rgb(4, 14, 174);
-    transition: 0.3s;
-    scale: .99;
-}
-
-.col-md-5 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.slide-one .illust-one {
-    width: 80%;
-    margin-left: 50px;
-}
-
-
-/* -------------------------
-    slide-two
-  ------------------------- */
-
-.slide-two {
-    background: rgb(255, 255, 255, .9);
-    border-radius: 20px;
-}
-
-.container2 {
-    background: rgba(255, 255, 255, .95);
-}
-
-.slide-two a {
+    /* index-0th */
+.index-0th a {
     display: inline-block;
     text-decoration: none;
     color: red;
@@ -114,7 +65,7 @@
     scale: 1.01;
 }
 
-.slide-two a:hover {
+.index-0th a:hover {
     font-weight: bold;
     font-size: large;
     box-shadow: 0px 0px 0px red;
@@ -202,19 +153,99 @@
     opacity: 1.0;
 }
 
+/* .index-1st */
 
+.index-1st {
+    background: linear-gradient(348deg, rgba(255, 255, 255, 0.97) 40%, rgba(25, 200, 255, 0.3) 100%);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.index-1st header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.topics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.col-8 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.left-col {
+    max-width: 45%;
+}
+
+.carousel-inner {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    margin-bottom: 10px;
+}
+
+.news-list li a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.news-list li a:hover {
+    color: #0056b3;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
 /* ---------------
-    Greed
+index-2nd
 --------------- */
 
 
 /* あいさつセクションのスタイリング */
 
-.Greed {
-    flex-direction: row;
+.index-2nd{
+    background: linear-gradient(348deg, rgba(255, 255, 255, 0.97) 40%, rgba(25, 200, 255, 0.3) 100%);
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
-
+.topics{
+    display: flex;
+    flex-direction: row;
+}
 .col-8 {
     width: 45%;
     height: 420px;
@@ -241,9 +272,9 @@
 
 /* メッセージブロックのスタイリング */
 
-.message-box {
+/* .message-box {
     background-color: rgba(255, 255, 255, .9);
-}
+} */
 
 .p-bold {
     font-weight: bold;
@@ -271,168 +302,176 @@
 }
 
 
-/* -------------------------
-    class-schedule   
-  ------------------------- */
 
-.class-schedule {
+/* ..........index-3rd............... */
+
+
+.index-3rd {
+    background: linear-gradient(168deg, rgba(255, 255, 255, 0.97) 40%, rgba(255, 255, 255, 0.9) 100%);
+    height: 70vh;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
 }
 
-.class-schedule h2 {
-    padding: 1vw 0vw;
+.class-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
 }
 
-.enrollment-link {
-    color: rgb(63, 25, 235, 0.5);
-    font-weight: bold;
-    /* テキストの色を白に */
-    text-decoration: none;
-    /* 下線を除去 */
-    transition: font-size 0.3s ease;
-    /* フォントサイズの変化にトランジションを適用 */
-    transition: 0.3s;
+.class-info p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
 }
 
-.fa-link {
-    padding-right: 10px;
-}
+.timeline-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 95vw;
+    padding: 0 2px;
+    position: relative;
+    }
 
-.enrollment-link::after {
-    content: '';
-    width: 0%;
+.timeline-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
     height: 2px;
-    background: #f44336;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+    background-color: #ccc;
+    z-index: 0;
 }
 
-.enrollment-link:hover {
-    font-weight: bold;
-    /* ホバー時にフォントサイズを大きく */
-}
-
-.enrollment-link:hover {
-    color: rgb(63, 25, 235, 1.0);
-    /* ホバー時の色 */
-}
-
-.enrollment-link:hover::after {
-    width: 20%;
-}
-
-.schedule-carousel {
+.timeline-item-horizontal {
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 20%;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.timeline-icon {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #b3faff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px; /* アイコンとカードの間のスペース */
+    z-index: 2;
+    position: absolute; /* 位置を固定 */
+    top: 50%; /* 棒に対して中央に配置 */
+    transform: translateY(-50%); /* アイコンを棒に重ねる */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.class-box {
-    border: 2px solid rgba(128, 128, 128, 0.1);
-    box-shadow: 8px 8px 10px rgba(0, 0, 0, .2);
-    margin: 20px;
-    padding: 2vw 3vw 3vw 3vw;
-    width: 1.6%;
-    /* 画面の高さの25%に設定 */
-    flex: 0 0 auto;
-    transition: transform 0.5s ease;
-    background-color: #fff;
-    border-radius: 20px;
-    /* デフォルトの文字色 */
-    transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+.timeline-content-horizontal {
+    padding: 20px;
+    background-color: #b3faff;
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.timeline-item-horizontal.top .timeline-icon {
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
 }
 
-.class-box:hover {
-    box-shadow: 0px 0px 0px black;
-    transition: .3s;
+.timeline-item-horizontal.bottom .timeline-icon {
+    top: 0;
+    transform: translateY(-50%);
 }
 
-.front-box {
-    height: 180px;
-    display: inline-grid;
-    padding-top: 20px;
+.timeline-item-horizontal.top .timeline-content-horizontal {
+    margin-bottom: 60px; /* 上部に余白を確保 */
 }
 
-.back-box {
-    height: 180px;
-    display: none;
+.timeline-item-horizontal.bottom .timeline-content-horizontal {
+    margin-top: 60px; /* 下部に余白を確保 */
+}
+
+.timeline-content-horizontal h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.timeline-content-horizontal p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.index-3rd .timeline-item-horizontal .timeline-content-horizontal {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 23vh;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 8px;
+    width: 18vw;
 }
 
-.box1:hover {
-    background-color: rgba(255, 130, 28, 0.9);
-    /* 背景色を反転 */
+
+.index-3rd .timeline-item-horizontal:hover .timeline-content-horizontal {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgb(151, 213, 255),#b3faff); /* ホバー時の水系グラデーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.box1:hover .front-box {
-    display: none;
+.index-3rd .timeline-item-horizontal:hover .timeline-icon {
+    background: #3e9eff
 }
+/* ..........index-3rd............... */
 
-.box1:hover .back-box {
+/* index-4th */
+
+.index-4th{
+    background: linear-gradient(168deg, rgba(255, 255, 255, 0.97) 40%, rgba(25, 200, 255, 0.97) 100%);
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.box2:hover {
-    background-color: rgb(125, 186, 255, 0.9);
-    /* 背景色を反転 */
+.index-4th h2 {
+    color: black;
 }
 
-.box2:hover .front-box {
-    display: none;
+.index-4th .info-item h3::after {
+    content:'';
+    display: block;
+    width: 25%;
+    margin: 0px auto 0;
+    border-bottom: 1px solid rgb(6, 158, 252);
+    transition: width 0.6s ease-in-out, left 0.6s ease-in-out;
+    position: relative;
+    left: -15%;
 }
 
-.box2:hover .back-box {
-    display: flex;
+.index-4th .info-item:hover h3::after {
+    border-bottom: 3px solid rgb(6, 158, 252);
+    width:30%;
+    left: 0;
 }
 
-.box3:hover {
-    background-color: rgb(102, 204, 153, 0.9);
-    /* 背景色を反転 */
+.index-4th p {
+    font-size: 1rem;
 }
 
-.box3:hover .front-box {
-    display: none;
-}
-
-.box3:hover .back-box {
-    display: flex;
-}
-
-.box4:hover {
-    background-color: rgba(253, 8, 8, 0.685);
-    /* 背景色を反転 */
-}
-
-.box4:hover .front-box {
-    display: none;
-}
-
-.box4:hover .back-box {
-    display: flex;
-}
-
-.class-box h4 {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-
-/* info-section */
-
-.info-section {
+.info-box{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: 95vw;
 }
-
-.info-section h2 {
-    display: none;
-}
-
 .teacher-info {
     flex: 1;
     padding: 2vw 0vw 0vw 0vw;
@@ -448,10 +487,6 @@
     /* 次のアイテムとの間隔 */
 }
 
-.info-item h3 {
-    border-bottom: 1px solid #a4a8d4;
-    /* 区切り線 */
-}
 
 .info-item-title {
     font-weight: bold;
@@ -465,7 +500,7 @@
 .map-container iframe {
     padding: 2vw 0vw 0vw 0vw;
     width: 100%;
-    height: 60vh;
+    height: 70vh;
 }
 
 
@@ -576,16 +611,16 @@
         margin-left: 50px;
     }
     /* -------------------------
-        slide-two
+        index-0th
       ------------------------- */
-    .slide-two {
+    .index-0th {
         background: rgb(255, 255, 255, .9);
         border-radius: 20px;
     }
     .container2 {
         background: rgba(255, 255, 255, .95);
     }
-    .slide-two a {
+    .index-0th a {
         display: inline-block;
         text-decoration: none;
         color: red;
@@ -597,7 +632,7 @@
         cursor: pointer;
         scale: 1.01;
     }
-    .slide-two a:hover {
+    .index-0th a:hover {
         font-weight: bold;
         font-size: large;
         box-shadow: 0px 0px 0px red;
@@ -621,7 +656,7 @@
         Greed
     --------------- */
     /* あいさつセクションのスタイリング */
-    .Greed {
+    .index-2nd{
         flex-direction: row;
         justify-content: space-around;
     }
@@ -669,136 +704,20 @@
         font-weight: bold;
         /* フォントの太さ */
     }
-    /* -------------------------
-        class-schedule   
-      ------------------------- */
-    .class-schedule {
-        flex-direction: column;
-        text-align: center;
-    }
-    .class-schedule h2 {
-        padding: 1vw 0vw;
-    }
-    .enrollment-link {
-        color: rgb(63, 25, 235, 0.5);
-        font-weight: bold;
-        /* テキストの色を白に */
-        text-decoration: none;
-        /* 下線を除去 */
-        transition: font-size 0.3s ease;
-        /* フォントサイズの変化にトランジションを適用 */
-        transition: 0.3s;
-    }
-    .fa-link {
-        padding-right: 10px;
-    }
-    .enrollment-link::after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        background: #f44336;
-        display: block;
-        margin: auto;
-        transition: 0.5s;
-    }
-    .enrollment-link:hover {
-        font-weight: bold;
-        /* ホバー時にフォントサイズを大きく */
-    }
-    .enrollment-link:hover {
-        color: rgb(63, 25, 235, 1.0);
-        /* ホバー時の色 */
-    }
-    .enrollment-link:hover::after {
-        width: 20%;
-    }
-    .schedule-carousel {
-        display: flex;
-        overflow: hidden;
-        justify-content: center;
-    }
-    .class-box {
-        border: 2px solid rgba(128, 128, 128, 0.1);
-        box-shadow: 8px 8px 10px rgba(0, 0, 0, .2);
-        margin: 20px;
-        padding: 2vw 3vw 3vw 3vw;
-        width: 1.6%;
-        /* 画面の高さの25%に設定 */
-        flex: 0 0 auto;
-        transition: transform 0.5s ease;
-        background-color: #fff;
-        border-radius: 20px;
-        /* デフォルトの文字色 */
-        transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
-    }
-    .class-box:hover {
-        box-shadow: 0px 0px 0px black;
-        transition: .3s;
-    }
-    .front-box {
-        height: 180px;
-        display: inline-grid;
-        padding-top: 20px;
-    }
-    .back-box {
-        height: 180px;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 8px;
-    }
-    .box1:hover {
-        background-color: rgba(255, 130, 28, 0.9);
-        /* 背景色を反転 */
-    }
-    .box1:hover .front-box {
-        display: none;
-    }
-    .box1:hover .back-box {
-        display: flex;
-    }
-    .box2:hover {
-        background-color: rgb(125, 186, 255, 0.9);
-        /* 背景色を反転 */
-    }
-    .box2:hover .front-box {
-        display: none;
-    }
-    .box2:hover .back-box {
-        display: flex;
-    }
-    .box3:hover {
-        background-color: rgb(102, 204, 153, 0.9);
-        /* 背景色を反転 */
-    }
-    .box3:hover .front-box {
-        display: none;
-    }
-    .box3:hover .back-box {
-        display: flex;
-    }
-    .box4:hover {
-        background-color: rgba(253, 8, 8, 0.685);
-        /* 背景色を反転 */
-    }
-    .box4:hover .front-box {
-        display: none;
-    }
-    .box4:hover .back-box {
-        display: flex;
-    }
-    .class-box h4 {
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    /* info-section */
-    .info-section {
+    /* ----index -3rd-- */
+
+
+
+    /* ----index -3rd-- */
+   
+    /* index-4th */
+    .index-4th {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 0 3vw;
     }
-    .info-section h2 {
+    .index-4th h2 {
         display: none;
         padding: 1vw 0vw 0 0;
     }
@@ -917,16 +836,16 @@
         margin-left: 50px;
     }
     /* -------------------------
-        slide-two
+        index-0th
       ------------------------- */
-    .slide-two {
+    .index-0th {
         background: rgb(255, 255, 255, .9);
         border-radius: 20px;
     }
     .container2 {
         background: rgba(255, 255, 255, .95);
     }
-    .slide-two a {
+    .index-0th a {
         display: inline-block;
         text-decoration: none;
         color: red;
@@ -938,7 +857,7 @@
         cursor: pointer;
         scale: 1.01;
     }
-    .slide-two a:hover {
+    .index-0th a:hover {
         font-weight: bold;
         font-size: large;
         box-shadow: 0px 0px 0px red;
@@ -962,7 +881,7 @@
         Greed
     --------------- */
     /* あいさつセクションのスタイリング */
-    .Greed {
+    .index-2nd{
         flex-direction: row;
         justify-content: space-around;
     }
@@ -1122,14 +1041,14 @@
         font-weight: bold;
         margin-bottom: 10px;
     }
-    /* info-section */
-    .info-section {
+    /* index-4th */
+    .index-4th {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 0 3vw;
     }
-    .info-section h2 {
+    .index-4th h2 {
         padding: 1vw 0vw 0 0;
     }
     .teacher-info {

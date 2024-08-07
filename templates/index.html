@@ -76,52 +76,61 @@
         </nav>
     </section>
 
-    <section class="body-section">
-        <i class="fa-brands fa-red-river" id="backToTop"></i>
+    <i class="fa-brands fa-red-river" id="backToTop"></i>
         <!-- タイトルと背景画像のセクション -->
-        <section class="boot-section">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active slide-one">
-                        <div class="container">
-                            <div class="col-md-6">
-                                <h1 class=" animate__animated animate__zoomIn animate__delay-1s">そろばんサークル</h1>
-                                <p class="animate__animated animate__fadeInUp animate__delay-2s">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
-                                <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">無料体験をしてみる!! <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="img-box">
-                                    <img src="{{ url_for('static', filename='images/raw-slider-image/back/back-3.jpg') }}" class="illust-one animate__animated animate__zoomIn animate__delay-1s">
-                                </div>
-                            </div>
+    <!-- <section class="boot-section">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active slide-one">
+                    <div class="container">
+                        <div class="col-md-6">
+                            <h1 class=" animate__animated animate__zoomIn animate__delay-1s">そろばんサークル</h1>
+                            <p class="animate__animated animate__fadeInUp animate__delay-2s">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
+                            <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">無料体験をしてみる!! <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4>
                         </div>
-                    </div>
-                    <div class="carousel-item slide-two">
-                        <div class="container">
-                            <div class="text-box1">
-                                <h1 class="animate__animated animate__zoomInDown ">そろばんサークル</h1>
-                                <p class="animate__animated animate__bounceIn animate__delay-1s animate__slow">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
-                                <a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">体験予約はこちら <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <div class="col-md-5">
+                            <div class="img-box">
+                                <img src="{{ url_for('static', filename='images/raw-slider-image/back/back-3.jpg') }}" class="illust-one animate__animated animate__zoomIn animate__delay-1s">
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <div class="carousel-item slide-two">
+                    <div class="container">
+                        <div class="text-box1">
+                            <h1 class="animate__animated animate__zoomInDown ">そろばんサークル</h1>
+                            <p class="animate__animated animate__bounceIn animate__delay-1s animate__slow">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
+                            <a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">体験予約はこちら <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">無料体験をしてみる!! <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
+            </button>
+        </div>
+    </section> -->
+    <section class="index-0th">
+        
+        <div class="text-box1">
+            <h1 class="animate__animated animate__zoomInDown ">そろばんサークル</h1>
+            <p class="animate__animated animate__bounceIn animate__delay-1s animate__slow">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
+            <a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">体験予約はこちら <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <!-- <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">無料体験をしてみる!! <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4> -->
+        </div>
+    </section>
         <!-- 生徒の声 -->
-        <section class="voice-section">
+    <section class="voice-section">
             <div class="classroom-carousel center">
                 <div>
                     <a href="{{ url_for('static', filename='pdf/student-voice.pdf') }}" target="_blank" title="click!!"><img src="{{ url_for('static', filename='images/student/student01.png') }}" alt="student01"></a>
@@ -146,9 +155,62 @@
                 </div>
             </div>
             <div class="hamburger"></div>
-        </section>
-        <!-- あいさつ -->
-        <section class="ind-sec Greed">
+    </section>
+    <section class="index-1st">
+        <header>
+            <h1>Hot Topic</h1>
+        </header>
+        <div class="topics">
+            <!-- 左カラム：写真のカルーセル -->
+            <div class="col-8 left-col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG5hdHVyZXxlbnwwfHx8fDE2MjgzOTg2NTk&ixlib=rb-1.2.1&q=80&w=400&h=400" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Photo+1';" class="d-block w-100" alt="Photo 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1617293363657-089ca50d08c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1vdW50YWluc3xlbnwwfHx8fDE2MjgzOTg3MzY&ixlib=rb-1.2.1&q=80&w=400&h=400" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Photo+2';" class="d-block w-100" alt="Photo 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGZvcmVzdHxlbnwwfHx8fDE2MjgzOTg4MzE&ixlib=rb-1.2.1&q=80&w=400&h=400" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Photo+3';" class="d-block w-100" alt="Photo 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1486911278847-3fa1694f7d41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJlYWNofGVufDB8fHx8MTYyODM5ODkxMA&ixlib=rb-1.2.1&q=80&w=400&h=400" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Photo+4';" class="d-block w-100" alt="Photo 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 右カラム：ニュース -->
+            <div class="col-8">
+                <h3>News</h3>
+                <ul class="news-list">
+                    {% for article in latest_articles %}
+                    <li><a href="{{ url_for('article_detail', article_id=article.id) }}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+        <!-- 教室情報 -->
+    <section class="index-2nd">
+        <header>
+            <h1>教室情報</h1>
+        </header>
+        <div class="topics">
             <div class="col-8 left-col">
                 <div class="greeting-section"></div>
             </div>
@@ -165,64 +227,58 @@
                     <p>多くが低学年の子どもたちですが、小さな彼らの中には上級者も多くいます。<br>ぜひ一度、そろばんサークルを覗いてみてください。</p>
                 </div>
             </div>
-        </section>
-        <section class="ind-sec class-schedule" id="class-schedule">
-            <h2>- 授業時間 -</h2>
-            <h4>授業曜日: 火・水・木・金</h4>
-            <h4>
-                <span>コース:</span> 週2回コース(授業曜日から2日のみ選択)
-                <br> フリーコース（授業曜日から週に何度でも）
-            </h4>
-            <h4>
-                <a href="{{ url_for('enrollment') }}" class="enrollment-link" title="pdfが開きます。">
-                    <i class="fa-solid fa-link"></i>詳しくはこちら
-                </a>
-            </h4>
-            <div class="schedule-carousel">
-                <div class="class-box box1" title="ここから始めましょう">
-                    <div class="front-box">
-                        <h3>1部</h3>
-                        <h5>授業時間：15:00～15:45</h5>
-                        <h5>対象：幼児、入門</h5>
-                    </div>
-                    <div class="back-box">
-                        <h3>数の読み書きができれば<br>だいじょうぶ。</h3>
-                    </div>
+        </div>
+    </section>
+    <!-- 済：クラスセクション -->
+    <section class="index-3rd"id="class-excuse">
+        <header>
+            <h1>クラス情報</h1>
+        </header>
+        <div class="class-info">
+            <h2>授業曜日とクラス情報</h2>
+            <p>授業曜日は火・水・木・金です。以下のクラスからお選びください。<br>スタートは基本1部または2部です。</p>
+        </div>
+        <div class="timeline-horizontal">
+            <div class="timeline-bar"></div>
+            <div class="timeline-item-horizontal top">
+                <div class="timeline-content-horizontal">
+                    <h3>1部</h3>
+                    <p>授業時間: <b>15:00〜15:45</b></p>
+                    <p>推奨:<b> 幼児・入門</b></p>
                 </div>
-                <div class="class-box box2" title="2桁のかけ算/わり算を暗算でできるようになります">
-                    <div class="front-box">
-                        <h3>2部</h3>
-                        <h5>授業時間：16:00～17:00</h5>
-                        <h5>対象：小学生入門・4級まで</h5>
-                    </div>
-                    <div class="back-box">
-                        <h3>2桁の<br>かけ算・わり算を<br>暗算でできるように</h3>
-                    </div>
-                </div>
-                <div class="class-box box3" title="３桁のかけ算・わり算も暗算でできるように。">
-                    <div class="front-box">
-                        <h3>3部</h3>
-                        <h5>授業時間：17:00～18:30</h5>
-                        <h5>対象：準1級～3級</h5>
-                    </div>
-                    <div class="back-box">
-                        <h3>３桁の<br>かけ算・わり算も暗算でできるように。</h3>
-                    </div>
-                </div>
-                <div class="class-box box4" title="おとなを含めてもかなり上位の計算能力です。そろばん塾を開けるレベルの能力が身についています">
-                    <div class="front-box">
-                        <h3>4部</h3>
-                        <h5>授業時間：18:30～20:00</h5>
-                        <h5>対象：1級・段位</h5>
-                    </div>
-                    <div class="back-box">
-                        <h3>競技大会で戦えるレベルです。<br>一生ものの誇りになります。</h3>
-                    </div>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-child"></i></div>
             </div>
-        </section>
-        <section class="ind-sec info-section">
-            <h2>-教室情報-</h2>
+            <div class="timeline-item-horizontal bottom">
+                <div class="timeline-content-horizontal">
+                    <h3>2部</h3>
+                    <p>授業時間: 16:00〜17:00</p>
+                    <p>推奨: 小学生入門・4級まで</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+            </div>
+            <div class="timeline-item-horizontal top">
+                <div class="timeline-content-horizontal">
+                    <h3>3部</h3>
+                    <p>授業時間: 17:00〜18:30</p>
+                    <p>推奨: 準1級〜3級</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-medal"></i></div>
+            </div>
+            <div class="timeline-item-horizontal bottom">
+                <div class="timeline-content-horizontal">
+                    <h3>4部</h3>
+                    <p>授業時間: 18:30〜20:00</p>
+                    <p>推奨: 1級・段位</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+            </div>
+        </div>
+    </section>
+    <section class="index-4th">
+        <header>
+            <h1>教室情報</h1>
+        </header>
+        <div class="info-box">
             <div class="teacher-info">
                 <div class="info-item">
                     <h3>教師名</h3>
@@ -253,61 +309,63 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.9493476580674!2d139.74343807638192!3d35.72746422743189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d0f66089ab9%3A0xc7b39074bde961ef!2z44Gd44KN44Gw44KT44K144O844Kv44Or!5e0!3m2!1sja!2sjp!4v1706521401495!5m2!1sja!2sjp"
                     width="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </section>
+        </div>
+            
+    </section>
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <!-- Slick Slider JavaScript -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        <!-- scroll script -->
-        <script>
-            $(document).ready(function() {
-                $('a[href^="#"]').click(function() {
-                    var speed = 500; // スクロール速度(ミリ秒)
-                    var href = $(this).attr("href");
-                    var target = $(href == "#" || href == "" ? 'html' : href);
-                    var position = target.offset().top - 80;
-                    $('html, body').animate({
-                        scrollTop: position
-                    }, speed, 'swing');
-                    return false;
-                });
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Slick Slider JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- scroll script -->
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').click(function() {
+                var speed = 500; // スクロール速度(ミリ秒)
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top - 80;
+                $('html, body').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
             });
-        </script>
-        <!-- to the top script -->
-        <script>
-            $(document).ready(function() {
-                $('#backToTop').click(function() {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 500); // 500ミリ秒でトップに戻る
-                });
+        });
+    </script>
+    <!-- to the top script -->
+    <script>
+        $(document).ready(function() {
+            $('#backToTop').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500); // 500ミリ秒でトップに戻る
+            });
 
-                // オプション: ページの特定の位置より下にスクロールした時にのみボタンを表示
-                $(window).scroll(function() {
-                    if ($(this).scrollTop() > 100) { // 100pxより下にスクロールしたら表示
-                        $('#backToTop').fadeIn();
+        // オプション: ページの特定の位置より下にスクロールした時にのみボタンを表示
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) { // 100pxより下にスクロールしたら表示
+                    $('#backToTop').fadeIn();
                     } else {
-                        $('#backToTop').fadeOut();
-                    }
-                });
+                    $('#backToTop').fadeOut();
+                }
+            });
 
                 // 初期状態ではボタンを隠す
-                $('#backToTop').hide();
-            });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script>
-            $('.carousel').carousel({
-                interval: 7000
-            })
-        </script>
+            $('#backToTop').hide();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 7000
+        })
+    </script>
     </section>
 </body>
 <footer>
     <div class="footer-content">
         <div class="footer-main">
-            <h2>そろばんサークル</h2>
+            <h1>そろばんサークル</h1>
             <h5>〒113-0021 東京都文京区本駒込2丁目10-4 四季ビル2F</h5>
             <h5>電話: 080-3722-3544 <br>※授業時間内(15:00~20:00)のご電話はご遠慮ください。</h5>
             <div class="footer-social-media">

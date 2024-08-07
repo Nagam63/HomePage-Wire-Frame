@@ -117,23 +117,24 @@ section p {
     scale: .99;
 }
 /* .........enrollment-1st.......... */
-    /* enrollment-1stセクション用のCSS */
+/* enrollment-1stセクション用のCSS */
 .enrollment-1st {
     background-color: rgba(255, 255, 255);
-    margin: 0 auto 10vh;
-    padding: 30px;
+    margin: 0 ;
+    padding: 3vh 0vh 9vh;
     clip-path: polygon(
         0% 0%,
         100% calc(0% + 3vw),
-        100% 100%,
-        0 calc(100% - 3vw)
-        );
+        100% 98%,
+        0 100%
+    );
 }
 
 .enrollment-1st header {
     padding: 20px 20px 20px;
     text-align: center;
 }
+
 .enrollment-1st header h1 {
     position: relative;
     display: inline-block;
@@ -141,6 +142,7 @@ section p {
     color: #333;
     margin-bottom: 20px;
 }
+
 .enrollment-1st header h1::after {
     content: '';
     display: block;
@@ -148,73 +150,105 @@ section p {
     margin: 10px auto 0;
     border-bottom: 3px solid rgb(6, 158, 252);
 }
-.enrollment-1st .subcribes{
+
+.enrollment-1st .subcribes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 30vh;
-    margin-bottom: 0px;
-    padding: 20px;
+    margin-bottom: 2vh;
+    padding: 10px 0px;
     border-radius: 0px;
-    margin-bottom: 10vh;
 }
 
-.enrollment-1st .subcribes .image{
-    width: 40%;
+.enrollment-1st .subcribes .image {
+    width: 100%;
+    max-width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px; /* 画像とテキストの間にスペースを追加 */
 }
 
-.enrollment-1st .image img{
-    max-height: 40vh;
-    height: 30vh;
+.enrollment-1st .image img {
+    max-width: 40%;
+    height: auto;
     border-radius: 5px;
 }
 
 .enrollment-1st .subcribe {
-    /* max-height: 40vh; */
-    width: 59%;
-    padding: 10px 20px;
+    width: 100%;
+    max-width: 59%;
     text-align: left;
 }
-.enrollment-1st .subcribe h3{
-    width: 100%;
-    padding: 0px 0 10px;
+
+.enrollment-1st .subcribe h3 {
+    width: 80%;
+    padding: 0px 0 10px 10px;
+    
     text-align: center;
 }
+
 .enrollment-1st .subcribe h3::after {
     content: '';
     display: block;
     width: 0%;
     margin: 0px auto 0;
     border-bottom: 3px solid rgb(6, 158, 252);
-    transition: width 0.5s ease;
-}
-.enrollment-1st .subcribe:hover h3::after  {
-    width: 50%;
+    transition: width 0.6s ease-in-out, left 0.6s ease-in-out;
+    position: relative;
+    left: -15%;
 }
 
-a
+.enrollment-1st .subcribes:hover h3::after {
+    width: 35%;
+    left: 0;
+}
 
-.enrollment-1st  .subcribe p{
+.enrollment-1st .subcribe p {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-}
-
-
-
-.enrollment-1st .content05 .subcribe p{
     text-align: left;
-
+    padding-left: 15vh;
 }
 
+.enrollment-1st .subcribe ul {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
+    padding-left: 20vh;
+    margin-bottom: 0;
+}
+/* メディアクエリ */
+@media screen and (max-width: 768px) {
+    .enrollment-1st .subcribes {
+        flex-direction: column;
+    }
+    .enrollment-1st .content02 {
+        flex-direction: column-reverse;
+    }
+    
+    .enrollment-1st .subcribes .subcribe{
+        max-width: 100%;
+    }
 
+    .enrollment-1st .subcribes .image {
+        width: 100%;
+        max-width: 100%;
+    }
 
+    .enrollment-1st .image img {
+        max-width: 40%;
+    }
 
-/* ..........feture-2nd............... */
-/* ..........feture-3rd............... */
+    .enrollment-1st .subcribe {
+        width: 100%;
+    }
+}
+
+/* ..........enrollment-2nd............... */
 .enrollment-2nd {
     background-color: rgba(255, 255, 255);
     margin: 0 auto;
@@ -267,10 +301,8 @@ a
 }
 
 .course-card {
-    background: linear-gradient(to bottom right, #6ac1ff, #4ba3f2);
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
     width: 300px;
     padding: 20px;
     transition: transform 0.3s;
@@ -296,12 +328,14 @@ a
     font-size: 24px;
     margin: 0;
 }
+
 .course-header h3::first-letter {
     font-size: 30px;
-    color: rgb(255, 2555, 255);
+    color: rgb(255, 255, 255);
     display: inline-block; /* transformを適用するために追加 */
     transform: rotate(90deg); /* 90度右に回転 */
 }
+
 .course-header .price {
     font-size: 20px;
     margin: 0;
@@ -316,36 +350,128 @@ a
     margin-top: 10px;
 }
 
-.standard-course .course-btn {
-    background: #007bff; /* 週2日コースのボタン色 */
-    color: #fff;
-    padding: 10px 20px;
+/* イラストのようなボタン */
+.course-btn {
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 240px;
+    padding: 10px 25px;
+    transition: 0.3s ease-in-out;
+    transition: background 0.3s;
+    font-weight: 600;
+    z-index: 1;
     border-radius: 5px;
     text-decoration: none;
-    transition: background 0.3s;
+}
+
+
+.course-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.course-btn::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    content: '';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translate3d(0, 0.40rem, -1rem);
+    transform: translate3d(0, 0.40rem, -1rem);
+    z-index: -2;
+}
+
+
+.course-btn i {
+    position: absolute;
+    right: 9px;
 }
 
 .course-btn:hover {
-    background: #0056b3;
+    transform: translate3d(0, 0.2rem, -1rem);
 }
 
+.course-btn:hover::after {
+    transform: translate3d(0, 0.2rem, -1rem);
+    box-shadow: 0 0.2rem 0 0 rgb(0 0 0 / 20%);
+}
+
+
+.standard-course {
+    background: linear-gradient(to bottom right, #6ac1ff, #4ba3f2);
+}
+.standard-course .course-btn {
+    background: rgba(0, 123, 255, 1); /* 週2日コースのボタン色 */
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.standard-course .course-btn::before {
+    background: rgba(107, 182, 255, 1);
+    border-color: rgba(107, 182, 255, 1);
+}
+
+.standard-course .course-btn::after {
+    background: rgba(43, 127, 222, 1);
+    border: 2px solid rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.4rem 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.8s ease-in-out, background-color 0.8s ease-in-out;
+}
+
+.standard-course .course-btn:hover::before {
+    background: rgba(107, 182, 255, 1);
+}
+
+.standard-course .course-btn:hover::after {
+    background: rgba(43, 127, 222, 1);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7), 0 0 15px 7px rgba(255, 255, 255, 0.5), 0 0 10px 5px rgba(255, 255, 255, 0.3); /* 影を小さく調整 */
+}
 .premium-course {
     background: linear-gradient(to bottom right, #f7b733, #fc4a1a);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    height: 400px; /* ここで共通の高さを設定 */
 }
-.premium-course  .course-body p::first-letter {
-    font-size: 20px;
-    color: rgb(255, 2555, 255);
-}
+
 .premium-course .course-btn {
     background: #f0932b; /* 週2日コースのボタン色 */
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
+    border: 2px solid #000;
 }
+
+/* フリーコースのボタンの色を変更 */
+.premium-course .course-btn::before {
+    background: rgba(240, 147, 43, 1); /* フリーコースのボタン色 */
+    border-color: rgba(240, 147, 43, 1);
+}
+.premium-course .course-btn::after {
+    background: rgba(240, 147, 43, 1);
+    border: 2px solid rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 0.6rem 0 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.4rem 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.premium-course .course-btn:hover::before {
+    background: rgba(255, 183, 77, 1); /* ホバー時の色 */
+    border-color: rgba(255, 183, 77, 1);
+}
+
+.premium-course .course-btn:hover::after {
+    background: rgba(255, 183, 77, 1); /* ホバー時の色 */
+    box-shadow: 0 0 20px 10px rgba(255, 183, 77, 0.5); /* 光って見えるエフェクト */
+}
+
 .ribbon {
     position: absolute;
     top: -10px;
@@ -355,35 +481,6 @@ a
     padding: 5px 10px;
     font-size: 14px;
     transform: rotate(45deg);
-}
-
-/* フリーコースのボタンの色を変更 */
-.premium-course .course-btn::before {
-    background: #f0932b; /* フリーコースのボタン色 */
-    border-color: #f0932b;
-}
-.premium-course .course-btn::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -webkit-transform: translate3d(0, 0.40rem, -1rem);
-    transform: translate3d(0, 0.40rem, -1rem);
-    border: 2px solid #000;
-    border-radius: inherit;
-    background: #f0932b;
-    -webkit-box-shadow: 0 0.6rem 0 0 rgb(0 0 0 / 20%);
-    box-shadow: 0 0.4rem 0 0 rgb(0 0 0 / 20%);
-    z-index: -2;
-}
-
-.premium-course .course-btn:hover::before {
-    background: #ffb74d !important; /* フリーコースのボタンのホバー色 */
-    border-color: #ffb74d !important;
 }
 
 
@@ -606,304 +703,5 @@ a
 /* ..........feture-4th............... */
 /* --------------------------------------------------- */
 
-/* メディアクエリ */
-@media screen and (max-width: 768px) {
-
-    .enrollment-2nd {
-        background-color: rgba(255, 255, 255);
-        margin: 0 auto;
-        height:fit-content;
-    }
-    .enrollment-2nd .cols{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .enrollment-1st .subcribes{
-        height: 50vh;
-        margin-bottom: 0vh;
-    }
-
-    .enrollment-1st .content01,
-    .enrollment-1st .content05{
-        flex-direction: column;
-        justify-content: center;
-    }
-    .enrollment-1st .content02,
-    .enrollment-1st .content04 {
-        flex-direction: column-reverse;
-        
-        justify-content: center;
-    }
-    .enrollment-1st .grid-item {
-        width: 45%;
-    }
-    .enrollment-1st .content01 .image,
-    .enrollment-1st .content02 .image,
-    .enrollment-1st .content01 .subcribe,
-    .enrollment-1st .content02 .subcribe {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .enrollment-1st .content01 .subcribe p,
-    .enrollment-1st .content02 .subcribe p {
-        font-size: 14px;
-    }
-}
 
 /* ..........feture-3rd............... */
-
-.course-excuse{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.course-excuse h3 {
-    margin: 0px 0 20px 0;
-}
-
-.course-excuse h5 {
-    margin: 0px 0 20px 0;
-}
-
-.course-row {
-    width: 75%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.course-col {
-    background: white;
-    width: 30%;
-    margin: 0px 1px 0px 0px;
-    padding-bottom: 15px;
-    position: relative;
-    overflow: hidden;
-    transition: 1s;
-    height: max-content;
-}
-
-.course-col h3 {
-    margin: 5px 0;
-    border-bottom: 1px solid #a4a8d4;
-    /* 区切り線 */
-}
-
-.course-col p {
-    margin-bottom: 20px;
-}
-
-.course-col .paying {
-    margin-bottom: 0
-}
-
-.course-col01 {
-    background: rgba(248, 248, 248, 0.9);
-    position: relative;
-    overflow: hidden;
-    transition: 1s;
-}
-
-.course-col01:hover {
-    scale: 1.05;
-}
-
-.course-col02:hover {
-    scale: 1.07;
-}
-
-
-/* イラストのようなボタン */
-
-.course-btn {
-    background: #6bb6ff;
-    border-radius: 3px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 240px;
-    padding: 10px 25px;
-    color: #003067;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    border: 2px solid #000;
-    z-index: 1;
-    border-radius: 5px;
-}
-
-.course-btn::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #6bb6ff;
-    z-index: -1;
-    border: 2px solid #000;
-    border-radius: 5px;
-}
-
-.course-btn::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -webkit-transform: translate3d(0, 0.40rem, -1rem);
-    transform: translate3d(0, 0.40rem, -1rem);
-    border: 2px solid #000;
-    border-radius: inherit;
-    background: #2b7fde;
-    -webkit-box-shadow: 0 0.6rem 0 0 rgb(0 0 0 / 20%);
-    box-shadow: 0 0.4rem 0 0 rgb(0 0 0 / 20%);
-    z-index: -2;
-}
-
-.course-btn i {
-    position: absolute;
-    right: 9px;
-}
-
-.course-btn:hover {
-    transform: translate3d(0, 0.2rem, -1rem);
-}
-
-.course-btn:hover:after {
-    transform: translate3d(0, 0.2rem, -1rem);
-    box-shadow: 0 0.2rem 0 0 rgb(0 0 0 / 20%);
-}
-
-
-/* -------------------------
-    membership-term
-  ------------------------- */
-
-.membership-terms h3 {
-    margin: 0px 0 20px 0;
-}
-
-.membership-terms h4 {
-    margin: 30px 0 10px 0;
-}
-
-.membership-col {
-    background: white;
-    width: 25%;
-    margin: 0px 1px 0px 0px;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-    transition: 1s;
-}
-
-.fa-angles-down {
-    margin-left: 10px;
-}
-
-.p-mention {
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100%;
-}
-
-
-
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-}
-
-footer h2 {
-    color: #ff4081;
-    font-size: 22px;
-    margin-top: 0;
-}
-
-footer p {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.footer-social-media {
-    margin-top: 20px;
-}
-
-.footer-social-media a {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.footer-social-media a:hover {
-    color: #007bff;
-}
-
-/* Navbar CSS */
-.navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 20px;
-}
-
-.navbar-logo {
-    max-height: 50px;
-}
-
-.nav-pc-links ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.nav-pc-links li {
-    display: inline;
-}
-
-.nav-pc-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.nav-phone .navbar-toggler {
-    border: none;
-}
-
-.offcanvas-title {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.offcanvas-body ul {
-    list-style: none;
-    padding: 0;
-}
-
-.offcanvas-body li {
-    margin-bottom: 10px;
-}
-
-.offcanvas-body a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.icons {
-    margin-right: 5px;
-}
