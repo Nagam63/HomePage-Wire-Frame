@@ -1,0 +1,211 @@
+/* ..........article-00............... */
+/* article-00セクション用のCSS */
+.article-00 {
+    margin-top: 9vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.article-00 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* 黒いレイヤー */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.article-00 .content h1,
+.article-00 .content h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.article-00 .content {
+    text-align: center;
+}
+
+.article-00 .content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.article-00 .content h4 {
+    margin-bottom: 20px;
+}
+
+.article-00 a {
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, lightblue, blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 4px rgb(4, 14, 174);
+    position: relative;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+.article-00 .content a:hover {
+    background-color: #0056b3;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+    transition: 0.3s;
+    scale: .99;
+}
+
+.article-00 .background-svg {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 9vw;
+    width: 20vw;
+    height: 40vh;
+    z-index: 0;
+}
+
+/* ..........article-1st セクション用のCSS............... */
+
+.article-1st {
+    padding: 30px;
+    text-align: center;
+}
+
+.article-1st header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* コンテンツブロックの基本スタイル */
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* 40vwの画像とテキストのペアを横並びにする */
+.content-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 80vw;
+    margin-bottom: 20vh;
+}
+
+/* 画像コンテンツのスタイル */
+.content-block.image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* テキストコンテンツのスタイル */
+.content-block.text {
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-block.text p {
+    font-size: 20px;
+    margin: 0;
+}
+.article-content .excerpt{
+    padding-bottom: 10vh;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.article-content .excerpt p{
+    font-size: 24px;
+}
+
+/* 更新日時のスタイル */
+.updated-at {
+    font-size: 14px;
+    color: #999;
+    margin: 20vh 0 10vh;
+    text-align: right;
+}
+
+
+
+/* ..........article-2nd セクション用のCSS............... */
+
+.article-2nd {
+    padding: 40px 30px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.article-2nd h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.article-2nd .campaign {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.article-2nd .campaign h3 {
+    font-size: 28px;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.article-2nd .campaign p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.article-2nd .trial-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, lightblue, blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 2px 2px 4px rgb(4, 14, 174);
+    margin-top: 20px;
+}
+
+.article-2nd .trial-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+    transform: scale(1.05);
+    transition: 0.3s;
+}

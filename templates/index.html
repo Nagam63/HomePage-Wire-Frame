@@ -121,13 +121,13 @@
         </div>
     </section> -->
     <section class="index-0th">
-        
         <div class="text-box1">
             <h1 class="animate__animated animate__zoomInDown ">そろばんサークル</h1>
-            <p class="animate__animated animate__bounceIn animate__delay-1s animate__slow">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
+            <p class="animate__animated animate__bounceIn animate__slow">珠算教室をどうやって選びますか？<br>まずはそろばんサークルへお越しください。</p>
             <a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">体験予約はこちら <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            <!-- <h4><a href="{{ url_for('enrollment') }}#course-excuse" class="trial-btn animate__animated animate__jackInTheBox animate__slow animate__delay-2s">無料体験をしてみる!! <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h4> -->
         </div>
+        <img src="{{ url_for('static', filename='svg/12230_color.svg') }}" class="background-svg " alt="Background SVG">
+    </section>
     </section>
         <!-- 生徒の声 -->
     <section class="voice-section">
@@ -162,7 +162,7 @@
         </header>
         <div class="topics">
             <!-- 左カラム：写真のカルーセル -->
-            <div class="col-8 left-col">
+            <div class="col-8">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -198,15 +198,24 @@
             <div class="col-8">
                 <h3>News</h3>
                 <ul class="news-list">
-                    {% for article in latest_articles %}
-                    <li><a href="{{ url_for('article_detail', article_id=article.id) }}">{{ article.title }}</a></li>
-                    {% endfor %}
+                    {% if latest_articles %}
+                        {% for article in latest_articles %}
+                            <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('article_detail', article_id=article.id) }}">{{ article.title }}</a></li>
+                        {% endfor %}
+                    {% else %}
+                        <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('articles') }}">最新のニュースとイベント</a></li>
+                        <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('articles') }}">そろばん教室の新しい取り組み</a></li>
+                        <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('articles') }}">大会結果速報</a></li>
+                        <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('articles') }}">イベントのご案内</a></li>
+                        <li><i class="fa-solid fa-newspaper"></i><a href="{{ url_for('articles') }}">生徒の声特集</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </section>
+    
         <!-- 教室情報 -->
-    <section class="index-2nd">
+    <!-- <section class="index-2nd">
         <header>
             <h1>教室情報</h1>
         </header>
@@ -228,7 +237,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- 済：クラスセクション -->
     <section class="index-3rd"id="class-excuse">
         <header>
@@ -273,6 +282,7 @@
                 <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
             </div>
         </div>
+        <img src="{{ url_for('static', filename='svg/20160_color.svg') }}" class="background-svg" alt="Background SVG">
     </section>
     <section class="index-4th">
         <header>

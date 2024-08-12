@@ -111,7 +111,15 @@ section p {
     transition: 0.3s;
     scale: .99;
 }
-
+.feature-0 .background-svg {
+    position: absolute;
+    top: 0;
+    right:  9vw;
+    width: 28vw;
+    height: 80vh;
+    z-index: 0;
+    
+}
 /* .........feature-1st.......... */
     
 .feature-1st {

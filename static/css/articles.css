@@ -1,0 +1,300 @@
+/* ..........articles-00............... */
+/* articles-00セクション用のCSS */
+.articles-00 {
+    margin-top: 8vh;
+    position: relative;
+    background-image: url("../images/articles/IMG_4478.JPG");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.articles-00 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 黒いレイヤー */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+.articles-00 .content {
+    text-align: center;
+}
+
+.articles-00 .content h1,
+.articles-00 .content h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+.articles-00 .content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.articles-00 .content a {
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to right, lightblue, blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 4px rgb(4, 14, 174);
+    position: relative;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+.articles-00 .content a:hover {
+    background-color: #0056b3;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+    transition: 0.3s;
+    scale: .99;
+}
+
+.articles-00 .background-svg {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right:  9vw;
+    width: 28vw;
+    height: 80vh;
+    z-index: 0;
+}
+.articles-1st {
+    padding: 30px;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+    color: #fff;
+}
+
+/* 各カテゴリごとのタグの文字色設定 */
+.tag {
+    color: rgb(0, 0, 0); /* 黒色 */
+    font-weight: bold;
+}
+.tag.教室 {
+    color: rgba(0, 123, 255, 1); /* 青色 */
+}
+
+.tag.検定 {
+    color: rgba(40, 167, 69, 1); /* 緑色 */
+}
+
+.tag.イベント {
+    color: rgba(255, 193, 7, 1); /* 黄色 */
+}
+
+.tag.大会 {
+    color: rgba(220, 53, 69, 1); /* 赤色 */
+}
+.tag.キャンペーン {
+    color:  rgba(150, 2, 255,1);/* 赤色 */
+}
+/* すべてカテゴリのボタン色 */
+.filter-btn.all {
+    background-color: rgb(0, 191, 255); 
+}
+.filter-btn.classroom {
+    background-color: rgb(0, 123, 255);
+}
+
+.filter-btn.exam {
+    background-color: rgb(0, 255, 55);
+}
+
+.filter-btn.event {
+    background-color: rgb(255, 191, 0);
+}
+
+.filter-btn.competition {
+    background-color: rgb(255, 0, 25);
+}
+.filter-btn.campaign {
+    background-color: rgba(150, 2, 255,1); /* 通常時のディープパープル */
+}
+
+/* アクティブなカテゴリの背景色設定 */
+
+.filter-btn.active.all {
+    background-color: rgb(0, 133, 186); 
+}
+.filter-btn.active.classroom {
+    background-color: rgba(0, 82, 170, 1);
+}
+
+.filter-btn.active.exam {
+    background-color: rgba(28, 114, 47, 1);
+}
+
+.filter-btn.active.event {
+    background-color: rgba(204, 154, 6, 1);
+}
+
+.filter-btn.active.competition {
+    background-color: rgba(165, 39, 51, 1);
+}
+
+.filter-btn.active.campaign {
+    background-color: rgba(58, 0, 100, 1); /* アクティブ時の濃いディープパープル */
+}
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.article-item {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    width: 70vw;
+    height: calc(25vh * 9 / 16);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.article-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* アイテムが少し大きくなる */
+}
+
+/* すべてカテゴリの背景色 */
+.article-item.all {
+    background-color: rgba(0, 191, 255, 0.1);
+}
+
+.article-item:hover.all {
+    background-color: rgba(0, 191, 255, 0.5);
+}
+
+/* 教室カテゴリの背景色 */
+.article-item.classroom {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.article-item:hover.classroom {
+    background-color: rgba(0, 123, 255, 0.5);
+}
+
+/* 検定カテゴリの背景色 */
+.article-item.exam {
+    background-color: rgba(0, 255, 55, 0.1);
+}
+
+.article-item:hover.exam{
+    background-color: rgba(0, 255, 55, 0.5);
+}
+/* イベントカテゴリの背景色 */
+.article-item.event {
+    background-color: rgba(255, 191, 0, 0.1);
+}
+.article-item:hover.event{
+    background-color: rgba(255, 191, 0, 0.5);
+}
+
+/* 大会カテゴリの背景色 */
+.article-item.competition {
+    background-color: rgba(255, 0, 25, 0.1);
+}
+
+.article-item:hover.competition{
+    background-color: rgba(255, 0, 25, 0.5);
+}
+
+/* 大会カテゴリの背景色 */
+.article-item.campaign {
+    background-color: rgba(150, 2, 255,0.1);
+}
+
+.article-item.campaign:hover{
+    background-color: rgba(150, 2, 255,0.5);
+}
+
+
+
+.article-item.hidden {
+    display: none; 
+}
+
+.article-item img {
+    height: calc(25vh * 9 / 16);
+    margin-right: 20px;
+    object-fit: cover;
+    display: block;
+}
+.article-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width:50vw;
+
+}
+
+.title-and-tags {
+    display: flex;
+    align-items: center; /* タグとタイトルを縦に中央揃え */
+    justify-content: space-between; /* タグを左、タイトルを中央に配置 */
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.title-and-tags .tags {
+    display: flex;
+    gap: 5px; /* タグ間のスペースを調整 */
+    flex: 1; /* タグの幅を可能な限り広げる */
+}
+
+.title-and-tags h2 {
+    margin: 0 auto; /* タイトルを中央に配置 */
+    font-size: 20px;
+    text-align: center; /* タイトルを中央揃え */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+}
+
+
+.article-info p.excerpt {
+    font-size: 16px;
+    color: #666;
+    margin: 0; /* 上下余白をなくす */
+    margin-top: 10px; /* タイトルと抜粋の間の余白を調整 */
+    line-height: 1.4; /* 行間を調整 */
+}
+.article-info .updated-at {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+    text-align: left; /* 左下に配置 */
+}
