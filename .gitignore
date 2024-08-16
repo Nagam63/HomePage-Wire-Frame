@@ -1,2 +1,12 @@
 *.txt
-static/
+static/images
+# Ignore the static/images directory
+static/images/
+
+# Optionally ignore specific file types
+*.jpg
+*.png
+
+# Ignore other directories or files if needed
+instance/
+*.db
