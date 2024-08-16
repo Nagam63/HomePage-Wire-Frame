@@ -1,13 +1,5 @@
 /* style.css */
-/* 全ての要素でpointer-eventsを無効化 */
-body * {
-    pointer-events: none;
-}
 
-/* ただし、リンクやボタンなど、アクションが可能な要素ではpointer-eventsを有効化 */
-a, button, input, select, textarea {
-    pointer-events: auto;
-}
 b {
     font-weight: bolder;
 }

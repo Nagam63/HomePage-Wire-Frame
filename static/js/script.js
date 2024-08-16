@@ -1,29 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // フィルターボタンのクリックイベント
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedCategory = this.getAttribute('data-category');
-            console.log('Selected Category:', selectedCategory); // 追加
-            
-            const articles = document.querySelectorAll('.article-item');
-            
-            articles.forEach(article => {
-                console.log('Article Category:', article.getAttribute('data-category')); // 追加
-                if (selectedCategory === 'all' || article.getAttribute('data-category') === selectedCategory) {
-                    article.style.display = 'flex';
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-    
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
     // ハンバーガーメニューのトグル
-    document.querySelector('.hamburger').addEventListener('click', function() {
-        document.querySelector('nav ul').classList.toggle('active');
-    });
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    }
 
     // Slick Sliderの初期化
     $('.schedule-carousel').slick({
@@ -55,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }]
     });
 
-    // スライダー変更時のイベントハンドラを追加
     $('.classroom-carousel').on('beforeChange', function() {
         $('.slick-current').removeClass('is--active');
     }).on('afterChange', function() {

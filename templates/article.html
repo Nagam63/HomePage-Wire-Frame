@@ -93,54 +93,53 @@
         <img src="{{ url_for('static', filename='svg/12224_color.svg') }}" class="background-svg animate__animated animate__fadeInDown animate__slow" alt="Background SVG">
     </section>
     
-    
     <section class="article-1st">
         <div class="breadcrumb-container">
-            <!-- 左上に配置 -->
             <div class="breadcrumb breadcrumb-top-left">
-                <a href="{{ url_for('articles') }}">記事一覧</a> 
-                <h3>　>>>　#{{ article.title }}
-                </h3> 
+                <a href="{{ url_for('articles') }}">記事一覧</a>
+                <h3>　>>>　#{{ article.title }}</h3>
             </div>
         </div>
     
         <header>
             <h1>{{ article.title }}</h1>
         </header>
+    
         <div class="article-content">
-            <!-- 80vwの画像を表示 -->
             <div class="content-block image" style="width: 80vw; height: 40vh; overflow: hidden;">
-                <img src="{{ article.thumbnail }}" alt="記事画像" style="width: 100%; height: auto; position: relative; top: -25%;">
+                <img src="{{ url_for('static', filename=article.thumbnail.replace('static/', '').replace('\\', '/')) }}" alt="記事画像" style="width: 100%; height: auto; position: relative; top: -50%;">
             </div>
-            <!-- 80vwのテキストを表示 -->
-            <div class="excerpt " style="width: 80vw;">
+    
+            <div class="excerpt" style="width: 80vw;">
                 <h3>本記事の内容：</h3>
                 <p>{{ article.excerpt }}</p>
             </div>
-            <!-- 追加の画像とテキストを表示 -->
-            {% if article.content %}
-                {% for content_block in article.content %}
+    
+            <!-- コンテンツブロックを表示 -->
+            {% if article.contents %}
+                {% for content_block in article.contents %}
                     {% if content_block.type == 'content-pair' %}
+                        <!-- content-pair タイプのコンテンツブロックを表示 -->
                         <div class="content-pair" style="display: flex;">
-                            {% for pair_block in content_block.content %}
-                                {% if pair_block.type == 'image' %}
-                                    <div class="content-block image" style="width: 40vw;">
-                                        <img src="{{ pair_block.src }}" alt="追加画像">
-                                    </div>
-                                {% elif pair_block.type == 'text' %}
-                                    <div class="content-block text" style="width: 40vw;">
-                                        <p>{{ pair_block.text }}</p>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+                            {% if content_block.src %}
+                                <div class="content-block image" style="width: {{ content_block.size | default('40vw') }};">
+                                    <img src="{{ url_for('static', filename=content_block.src.replace('static/', '').replace('\\', '/')) }}" alt="追加画像">
+                                </div>
+                            {% endif %}
+                            {% if content_block.text %}
+                                <div class="content-block text" style="width: {{ content_block.size | default('40vw') }};">
+                                    <p>{{ content_block.text }}</p>
+                                </div>
+                            {% endif %}
                         </div>
                     {% else %}
+                        <!-- その他のタイプのコンテンツブロックを表示 -->
                         {% if content_block.type == 'image' %}
-                            <div class="content-block image" style="width: {{ content_block.size }};">
-                                <img src="{{ content_block.src }}" alt="追加画像">
+                            <div class="content-block image" style="width: {{ content_block.size | default('80vw') }};">
+                                <img src="{{ url_for('static', filename=content_block.src.replace('static/', '').replace('\\', '/')) }}" alt="追加画像">
                             </div>
                         {% elif content_block.type == 'text' %}
-                            <div class="content-block text" style="width: {{ content_block.size }};">
+                            <div class="content-block text" style="width: {{ content_block.size | default('80vw') }};">
                                 <p>{{ content_block.text }}</p>
                             </div>
                         {% endif %}
@@ -148,24 +147,36 @@
                 {% endfor %}
             {% endif %}
         </div>
+    
         <p class="updated-at">更新日時: {{ article.updated_at.strftime('%Y/%m/%d') }}</p>
-
+    
         <div class="breadcrumb-container">
-            <!-- 左下に配置 -->
             <div class="breadcrumb breadcrumb-top-left">
-                <a href="{{ url_for('articles') }}">記事一覧</a> 
-                <h3>　>>>　{{ article.title }}
-                </h3> 
+                <a href="{{ url_for('articles') }}">記事一覧</a>
+                <h3>　>>>　{{ article.title }}</h3>
             </div>
         </div>
-    
     </section>
+    
     <section class="article-2nd">
         <h2>キャンペーン情報</h2>
         {% for campaign in campaigns %}
             <div class="campaign">
                 <h3>{{ campaign.title }}</h3>
-                <p>{{ campaign.description }}</p>
+                <p>{{ campaign.excerpt }}</p>
+                {% if campaign.contents %}
+                    {% for content_block in campaign.contents %}
+                        {% if content_block.type == 'text' %}
+                            <div class="content-block text" style="width: {{ content_block.size | default('80vw') }};">
+                                <p>{{ content_block.text }}</p>
+                            </div>
+                        {% elif content_block.type == 'image' %}
+                            <div class="content-block image" style="width: {{ content_block.size | default('80vw') }};">
+                                <img src="{{ url_for('static', filename=content_block.src.replace('static/', '').replace('\\', '/')) }}" alt="キャンペーン画像">
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         {% endfor %}
         <h4>

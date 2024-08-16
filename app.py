@@ -1,7 +1,277 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, flash, request, jsonify
+from flask_migrate import Migrate
 from datetime import datetime
+from models import db, Category, Article, Campaign, Content, User
+from flask_migrate import Migrate
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from werkzeug.utils import secure_filename
+import os
+import secrets
 
 app = Flask(__name__)
+
+# セッションに必要なシークレットキーを設定
+app.config['SECRET_KEY'] = secrets.token_hex(16)
+
+# データベース設定
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///soroban_circle.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# データベースの初期化
+db.init_app(app)
+migrate = Migrate(app, db)
+
+with app.app_context():
+    db.create_all()
+
+# ログイン管理の設定
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form['username']
+    password = request.form['password']
+    user = User.query.filter_by(username=username).first()
+    if user is None or not user.check_password(password):
+        flash('ユーザー名またはパスワードが間違っています')
+        return redirect(url_for('articles'))
+    login_user(user)
+    return redirect(url_for('articles'))
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('articles'))
+
+# アップロードされたファイルを保存するためのパスを指定
+UPLOAD_FOLDER = 'static/images/articles'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+CATEGORY_TRANSLATIONS = {
+    "classroom": "教室",
+    "exam": "検定",
+    "event": "イベント",
+    "competition": "大会",
+    "campaign": "キャンペーン"
+}
+
+# 新規記事作成
+@app.route('/create_article', methods=['POST'])
+@login_required
+def create_article():
+    try:
+        # 受け取ったフォームデータをすべてログ出力
+        form_data = request.form.to_dict()
+        print("Received form data:")
+        for key, value in form_data.items():
+            print(f"{key}: {value}")
+
+        title = request.form['title']
+        category = request.form['category']
+        excerpt = request.form['excerpt']
+        tags = request.form['tags'].strip()
+
+        # タグの整形
+        autotag_english = f"{category}" if category else ''
+        autotag_japanese = CATEGORY_TRANSLATIONS.get(category, category)
+
+        all_tags = set(tag.strip() for tag in tags.replace('#', '').split(',') if tag.strip())
+        if autotag_english in all_tags:
+            all_tags.remove(autotag_english)
+        all_tags.add(autotag_japanese)
+
+        tags = ', '.join(f"#{tag}" for tag in all_tags)
+
+        # サムネイル画像の処理
+        thumbnail = request.files['thumbnail']
+        if thumbnail:
+            category_folder = os.path.join(app.config['UPLOAD_FOLDER'], category)
+            if not os.path.exists(category_folder):
+                os.makedirs(category_folder)
+            filename = secure_filename(thumbnail.filename)
+            thumbnail_path = os.path.join(category_folder, filename)
+            thumbnail.save(thumbnail_path)
+
+        # 新しい記事の作成
+        new_article = Article(
+            title=title,
+            category_id=Category.query.filter_by(name=category).first().id,
+            excerpt=excerpt,
+            thumbnail=thumbnail_path,
+            tags=tags.replace('#', ''),
+            updated_at=datetime.utcnow()
+        )
+        db.session.add(new_article)
+        db.session.flush()  # flush to get the article ID before committing
+
+        # コンテンツブロックの処理
+        content_count = request.form.get('content_count', type=int, default=0)
+        print(f"Content count received: {content_count}")
+
+        for i in range(1, content_count + 1):
+            content_type = request.form.get(f'contentType{i}')
+            print(f"Processing content block {i} with type: {content_type}")
+
+            if content_type == '80vw':
+                text = request.form.get(f'content80Text{i}')
+                if text:
+                    content_block = Content(
+                        article_id=new_article.id,
+                        type='text',
+                        size='80vw',
+                        text=text
+                    )
+                    db.session.add(content_block)
+                    print(f"Added text block: {text}")
+            elif content_type == 'content-pair':
+                position = request.form.get(f'pairPosition{i}')
+                text = request.form.get(f'contentPairText{i}')
+                image = request.files.get(f'contentPairImage{i}')
+                if image:
+                    image_filename = secure_filename(image.filename)
+                    image_path = os.path.join(app.config['UPLOAD_FOLDER'], category, image_filename)
+                    image.save(image_path)
+                    content_block = Content(
+                        article_id=new_article.id,
+                        type='content-pair',
+                        size=position,
+                        text=text,
+                        src=image_path
+                    )
+                    db.session.add(content_block)
+                    print(f"Added content-pair block with text: {text} and image: {image_path}")
+
+        db.session.commit()
+        flash('記事が作成されました。')
+    except Exception as e:
+        db.session.rollback()  # rollback in case of error
+        flash(f"記事の作成中にエラーが発生しました: {str(e)}")
+    return redirect(url_for('articles'))
+
+
+# 記事編集
+@app.route('/edit_article', methods=['POST'])
+@login_required
+def edit_article():
+    try:
+        article_id = request.form['article']
+        article = Article.query.get_or_404(article_id)
+
+        article.title = request.form['title']
+        article.category_id = Category.query.filter_by(name=request.form['category']).first().id
+        article.excerpt = request.form['excerpt']
+        tags = request.form['tags']
+
+        # タグの整形
+        autotag = f"#{request.form['category']}" if request.form['category'] else ''
+        if autotag and autotag not in tags:
+            tags = f"{tags}, {autotag}" if tags else autotag
+        article.tags = tags.replace('#', '')  # #記号を除去して保存
+
+        # autotag を日本語に変換
+        autotag = CATEGORY_TRANSLATIONS.get(request.form['category'], request.form['category'])
+        if autotag and autotag not in tags:
+            tags = f"{tags}, {autotag}" if tags else autotag
+        article.tags = tags
+
+        # サムネイル画像の処理
+        if 'thumbnail' in request.files:
+            thumbnail = request.files['thumbnail']
+            if thumbnail:
+                category_folder = os.path.join(app.config['UPLOAD_FOLDER'], request.form['category'])
+                if not os.path.exists(category_folder):
+                    os.makedirs(category_folder)
+                
+                filename = secure_filename(thumbnail.filename)
+                thumbnail_path = os.path.join(category_folder, filename)
+                thumbnail.save(thumbnail_path)
+                article.thumbnail = thumbnail_path
+
+        # コンテンツブロックの処理
+        Content.query.filter_by(article_id=article.id).delete()  # 古いコンテンツを削除
+        content_count = int(request.form.get('content_count', 0))
+
+        for i in range(1, content_count + 1):
+            content_type = request.form.get(f'contentType{i}')
+            if content_type == '80vw':
+                text = request.form.get(f'content80Text{i}')
+                if text:
+                    content_block = Content(
+                        article_id=article.id,
+                        type='text',
+                        size='80vw',
+                        text=text
+                    )
+                    db.session.add(content_block)
+            elif content_type == 'content-pair':
+                position = request.form.get(f'pairPosition{i}')
+                text = request.form.get(f'contentPairText{i}')
+                image = request.files.get(f'contentPairImage{i}')
+                if image:
+                    image_filename = secure_filename(image.filename)
+                    image_path = os.path.join(app.config['UPLOAD_FOLDER'], request.form['category'], image_filename)
+                    image.save(image_path)
+                    content_block = Content(
+                        article_id=article.id,
+                        type='content-pair',
+                        size=position,
+                        text=text,
+                        src=image_path
+                    )
+                    db.session.add(content_block)
+
+        article.updated_at = datetime.utcnow()
+        db.session.commit()
+        flash('記事が更新されました。')
+    except Exception as e:
+        db.session.rollback()  # rollback in case of error
+        flash(f"記事の更新中にエラーが発生しました: {str(e)}")
+    return redirect(url_for('articles'))
+
+
+# 記事データ取得（記事編集用）
+@app.route('/get_article_data/<int:article_id>', methods=['GET'])
+def get_article_data(article_id):
+    article = Article.query.get_or_404(article_id)
+    content_blocks = []
+
+    for block in article.content:
+        content_blocks.append({
+            'type': block.type,
+            'size': block.size,  # 80vw or content-pairの場合のサイズ
+            'text': block.text,  # テキストがある場合
+            'position': block.size if block.type == 'content-pair' else None,  # content-pairの場合の位置
+            'src': block.src  # 画像がある場合のパス
+        })
+
+    return jsonify({
+        'title': article.title,
+        'category': article.category.name,
+        'excerpt': article.excerpt,
+        'autoTag': f"#{article.category.name}",
+        'tags': article.tags,
+        'content': content_blocks
+    })
+
+# 記事削除
+@app.route('/delete_article', methods=['POST'])
+@login_required
+def delete_article():
+    article_id = request.form['article']
+    article = Article.query.get_or_404(article_id)
+    db.session.delete(article)
+    db.session.commit()
+    flash('記事が削除されました。')
+    return redirect(url_for('articles'))
+
 
 
 # カテゴリごとのデータ
@@ -35,9 +305,12 @@ category_data = {
 
 # 常時開催キャンペーンデータ
 default_campaign = {
+    'id':0,
     'title': 'お友達紹介キャンペーン',
-    'description': 'お友達を紹介していただくと、双方に特典があります！',
+    'excerpt': 'お友達を紹介していただくと、双方に特典があります！',
     'thumbnail': '/static/images/campaign/Brand-Image00.png',
+    'category': 'campaign',
+    'tags': ['キャンペーン'],
     'start_date': datetime(2024, 1, 1),
     'end_date': datetime(2024, 12, 31)
 }
@@ -222,7 +495,7 @@ article_list = [
         'updated_at': datetime(2024, 8, 10),
         'content': []
     }
-] + campaign_list  # キャンペーンを記事リストに追加
+] 
 
 
 @app.route('/')
@@ -241,37 +514,94 @@ def features():
 def schedule():
     return render_template('schedule.html')
 
-# 記事一覧ページ
+
 @app.route('/articles')
 def articles():
-    # 更新日順にソート（キャンペーンは end_date を使用）
-    sorted_articles = sorted(
-        article_list, 
-        key=lambda x: x.get('updated_at', x.get('end_date', datetime.min)), 
-        reverse=True
-    )
-    return render_template('articles.html', articles=sorted_articles)
+    try:
+        # データベースから記事を読み込む
+        articles = Article.query.order_by(Article.updated_at.desc()).all()
+
+        # カテゴリ名をテンプレートに渡すための処理
+        articles_with_categories = []
+        for article in articles:
+            article_data = {
+                'id': article.id,
+                'title': article.title,
+                'excerpt': article.excerpt,
+                'thumbnail': article.thumbnail,
+                'category': article.category.name,
+                'tags': article.tags.split(','),  # タグをカンマで分割してリストとして渡す
+                'updated_at': article.updated_at
+            }
+            articles_with_categories.append(article_data)
+
+        # データベースからキャンペーンを読み込む
+        campaigns = Campaign.query.order_by(Campaign.end_date.desc()).all()
+
+        # 記事リストにキャンペーンを追加
+        all_items = articles_with_categories + campaigns
+        
+        # 日付順にソート（記事はupdated_at、キャンペーンはend_dateを使用）
+        all_items.sort(key=lambda x: x['updated_at'] if 'updated_at' in x else x.end_date, reverse=True)
+        
+        # デフォルトキャンペーンを一位に追加
+        all_items.insert(0, default_campaign)
+        if not all_items:
+            raise Exception("No articles found in the database.")
+
+    except Exception as e:
+        # エラーが発生した場合、またはデータが見つからなかった場合、フォールバックとしてリストデータを使用
+        all_items = article_list + campaign_list
+        all_items.sort(key=lambda x: x.get('updated_at', x.get('end_date', datetime.min)), reverse=True)
+        # デフォルトキャンペーンを一位に追加
+        all_items.insert(0, default_campaign)
+
+    return render_template('articles.html', articles=all_items)
+
+
 
 # 記事詳細ページ
 @app.route('/article/<int:article_id>')
 def article_detail(article_id):
-    article = next((item for item in article_list if item["id"] == article_id), None)
-    if article:
-        category_info = category_data.get(article['category'], {})
-        
+    try:
+        # データベースから記事を取得
+        article = Article.query.get_or_404(article_id)
+        category_info = Category.query.filter_by(id=article.category_id).first()
+
+        # デバッグ情報
+        print(f"Article ID: {article.id}")
+        print(f"Title: {article.title}")
+        print(f"Excerpt: {article.excerpt}")
+        print(f"Category ID: {article.category_id}")
+        print(f"Thumbnail: {article.thumbnail}")
+        print(f"Tags: {article.tags}")
+        print(f"Content Blocks: {article.contents}")
+
+        if not article.contents:
+            print("No content blocks found for this article.")
+        else:
+            for block in article.contents:
+                print(f"Content Block ID: {block.id}, Type: {block.type}, Text: {block.text}, Image: {block.src}")
+
         # 現在の日時でキャンペーンをフィルタリング
         current_date = datetime.now()
-        active_campaigns = [campaign for campaign in campaign_list if campaign['start_date'] <= current_date <= campaign['end_date']]
-        
+        active_campaigns = Campaign.query.filter(Campaign.start_date <= current_date, Campaign.end_date >= current_date).all()
+
         # 期間限定キャンペーンがない場合は常時開催キャンペーンを追加
         if not active_campaigns:
-            active_campaigns.append(default_campaign)
-        
-        return render_template('article.html', article=article, category_info=category_info, campaigns=active_campaigns)
-    else:
-        return "Article not found", 404
+            active_campaigns = [default_campaign]
 
+    except Exception as e:
+        # データベースから取得できない場合のフォールバック
+        print(f"Error retrieving article: {e}")
+        article = next((item for item in article_list if item["id"] == article_id), None)
+        category_info = category_data.get(article['category'], {})
+        active_campaigns = [campaign for campaign in campaign_list if campaign['start_date'] <= datetime.now() <= campaign['end_date']]
 
+        if not article:
+            return "Article not found", 404
+
+    return render_template('article.html', article=article, category_info=category_info, campaigns=active_campaigns)
 
 if __name__ == '__main__':
     app.run(debug=True)
